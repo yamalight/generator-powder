@@ -1,0 +1,3 @@
+{#user}
+    <li><a href="/auth/logout" target="_self">Sign out</a></li>
+{/user}

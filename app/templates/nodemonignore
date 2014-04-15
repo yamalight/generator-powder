@@ -1,0 +1,17 @@
+# Ignore git repos
+**/.git/**
+
+# Ignore idea stuff
+.idea/**/*
+
+# Ignore public web files
+public/**/*
+
+# Ignore tests
+tests/**
+
+# Ignore misc stuff
+**/*.html
+**/*.dust
+README.md
+nohup.out

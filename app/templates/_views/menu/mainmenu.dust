@@ -1,0 +1,6 @@
+<li {?home}class="active"{/home}><a href="/" target="_self">Home</a></li>
+{#user}
+    <li><a href="/" target="_self">Logged in!</a></li>
+{:else}
+    <li {?reg}class="active"{/reg}><a href="/register"target="_self">Register</a></li>
+{/user}

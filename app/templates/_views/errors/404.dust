@@ -1,0 +1,7 @@
+{>"core/layout.dust"/}
+{<title}
+  Error! 404 - Not found!
+{/title}
+{<body}
+  Error! 404 - Not found!
+{/body}

@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-powder' ]; then cd .. && eval "mv $currentfolder generator-powder" && cd generator-powder; fi
+

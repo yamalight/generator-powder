@@ -1,0 +1,41 @@
+{>"core/layout.dust"/}
+{<menu}
+    {>"menu/mainmenu.dust" reg="true" /}
+{/menu}
+{<menu_right}
+    {>"menu/mainmenuRight.dust" user=user /}
+{/menu_right}
+{<body}
+    <div class="container" ng-controller="RegisterController">
+        {#error}
+        <div class="alert alert-danger">{error}</div>
+        {/error}
+
+        <div class="center-block row">
+            <h3>Register as new user:</h3>
+            <div>
+                <form class="form well" role="form" method="post" action="/auth/register" id="registerform">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input id="username" class="form-control login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" placeholder="Username" name="username" required
+                        {#oldData}value="{username}"{/oldData} />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordNew">Password</label>
+                        <input type="password" class="login_input form-control" placeholder="Password (min. 6 characters)" name="passwordNew" required autocomplete="off" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordRepeat">Confirm Password</label>
+                        <input type="password" class="form-control" id="passwordRepeat" placeholder="Password again" name="passwordRepeat" required autocomplete="off" />
+                    </div>
+
+                    <input type="hidden" name="_csrf" value="{csrf}" />
+
+                    <input type="submit" name="register" value="Register" class="btn btn-primary"/>
+                </form>
+            </div>
+        </div>
+    </div>
+{/body}

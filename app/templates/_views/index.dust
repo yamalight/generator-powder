@@ -1,0 +1,12 @@
+{>"core/layout.dust"/}
+{<menu}
+    {>"menu/mainmenu.dust" home="true" /}
+{/menu}
+{<menu_right}
+    {>"menu/mainmenuRight.dust" user=user /}
+{/menu_right}
+{<body}
+    <div class="container" ng-controller="HomeController">
+        <h1>You are in!</h1>
+    </div>
+{/body}
