@@ -3,6 +3,9 @@ var request = require('request');
 var config = require('../config');
 var baseUrl = 'http://localhost:'+config.defaultPort;
 
+// redefine request to work with json
+request = request.defaults({json: true});
+
 // tests
 describe('<%= appName %> Api suite', function(){
     it('#Index', function(done){
