@@ -28,11 +28,10 @@
     "method-override": "^1.0.0",
     "mongoose": "^3.8.8",
     "optimist": "^0.6.1",
-    "passport": "^0.2.0",
-    <% if(addAuth) { %>
-    "passport-local": "^1.0.0",
-    <% } %>
+    "passport": "^0.2.0",<% if(addAuth) { %>
+    "passport-local": "^1.0.0",<% } %>
     "portfinder": "^0.2.1",
+    "request": "^2.34.0",
     "underscore": "^1.6.0"
   },
   "devDependencies": {
@@ -52,6 +51,7 @@
     "gulp-watch": "^0.5.3",
     "gulp-exit": "0.0.2",
     "nodemon": "^1.0.17",
-    "should": "^3.3.0"
+    "should": "^3.3.0",
+    "zombie": "^2.0.0-alpha31"
   }
 }

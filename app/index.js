@@ -117,15 +117,25 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.directory('_lib', 'lib');
     // modules
     this.directory('_modules', 'modules');
-    // client-side files
+    // client-side css/img files
     this.directory('_public/css', 'public/css');
     this.directory('_public/img', 'public/img');
-    this.directory('_public/js', 'public/js');
+    // base client-side js
+    this.copy('_public/js/app.js', 'public/js/app.js');
+    this.copy('_public/js/controllers.js', 'public/js/controllers.js');
+    this.copy('_public/js/directives.js', 'public/js/directives.js');
+    this.copy('_public/js/routes.js', 'public/js/routes.js');
+    // client-side data
     this.directory('_public/js/data', 'public/js/data');
+    // angular directives
     this.directory('_public/js/directives', 'public/js/directives');
+    // angular filters
     this.directory('_public/js/filters', 'public/js/filters');
+    // angular modules
     this.directory('_public/js/modules', 'public/js/modules');
+    // angular services
     this.directory('_public/js/services', 'public/js/services');
+    // angular templates
     this.directory('_public/templates', 'public/templates');
     // tests
     this.directory('_tests', 'tests');

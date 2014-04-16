@@ -1,7 +1,6 @@
 module.exports = function(app) {
     // check for auth in every request
-    app.all('*', function(req,res,next) {
-        <% if(addAuth) { %>
+    app.all('*', function(req,res,next) {<% if(addAuth) { %>
         var unauthAllowedRoutes = ['/auth', '/register', '/auth/login', '/auth/register'];
         var url = req.url.split('?')[0];
 
@@ -12,10 +11,8 @@ module.exports = function(app) {
             next();
         } else {
             next(new Error(401));
-        }
-        <% } else { %>
+        }<% } else { %>
         // add your auth url checks here
-        next();
-        <% } %>
+        next();<% } %>
     });
 };
