@@ -18,10 +18,10 @@ $ yo powder
 
 ### API
 
-`$ yo kraken`  
+`$ yo powder`  
 Creates a new powder application.
 
-`$ yo kraken:controller myController`  
+`$ yo powder:controller myController`  
 Generates a new controller named *myController* and it's dependencies.
 
 ## Learning Your Way Around
