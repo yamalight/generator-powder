@@ -7,16 +7,8 @@
     <!-- mobile fullscreen -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <!-- meta info -->
-    <meta name="description" content="conTEXT allows to semantically analyze text corpora using Linked Data and to visualize results in novel ways.">
-    <meta name="author" content="Ali Khalili">
-    <meta name="author" content="Tim Ermilov">
-
     <!-- title -->
     <title>{+title}<%= appName %>{/title}</title>
-
-    <!-- apple icon -->
-    <link rel="apple-touch-icon" href="/img/icon.png" />
 
     <!-- styles -->
     <link rel="stylesheet" href="/dist/main.min.css" />
