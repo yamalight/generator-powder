@@ -21,11 +21,17 @@ describe('powder generator', function () {
     var expected = [
       // add files you expect to exist here.
       '.jshintrc',
-      '.editorconfig'
+      '.editorconfig',
+      'app.js',
+      'bower.json',
+      'config.js',
+      'gulpfile.js',
+      'package.json',
+      'README.md'
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      'addAuth': true
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
