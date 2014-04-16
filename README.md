@@ -82,12 +82,12 @@ listening on port 8080
 - **/modules/** - Server-side user modules
 - **/public/css/** - CSS files
 - **/public/img/** - Client-side image files
-- **/public/js/app.js - Client-side javascript bootstrapper
-- **/public/js/controllers.js - Angular controllers loader
-- **/public/js/directives.js - Angular directives loader
-- **/public/js/filters.js - Angular filters loader
-- **/public/js/routes.js - Angular routes
-- **/public/js/services.js - Angular services loader
+- **/public/js/app.js** - Client-side javascript bootstrapper
+- **/public/js/controllers.js** - Angular controllers loader
+- **/public/js/directives.js** - Angular directives loader
+- **/public/js/filters.js** - Angular filters loader
+- **/public/js/routes.js** - Angular routes
+- **/public/js/services.js** - Angular services loader
 - **/public/js/controllers/** - Angular controllers
 - **/public/js/data/** - Supplementary data
 - **/public/js/directives/** - Custom angular directives
