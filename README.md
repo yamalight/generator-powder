@@ -86,6 +86,40 @@ listening on port 8080
 - **/config.js** - Application config
 - **/gulpfile.js** - Gulp bootstrapper
 
+### Controllers
+
+Route logic is moved into the `/controllers/` directory and its subdirectories.  
+For the sake of simplicity `/controllers/` directory has two default subdirectories: `/controllers/api/` and `/controllers/main/`.
+
+For example, a route for your home page, would use a `/controllers/main/index.js` file such as:
+
+```js
+// export index
+exports.index = {
+    path: '/',
+    method: 'get',
+    returns: function(req, res) {
+        return res.render('index');
+    }
+};
+```
+
+This file would define the routes and the logic for the home page. The advantage of keeping routes and logic segregated in individual files starts to show as the application grows. If something fails, it's very easy to pinpoint where things went wrong.
+
+When a new controller is created, the generator will also create both client and server-side templates, routes and all needed client javascript files for you.
+
+### Models
+
+Data models are separated from the controller logic resulting in cleaner, more organized code. Data models live in the `/db/` folder.
+
+### Templates
+
+[Dust JavaScript templates](https://github.com/linkedin/dustjs) are the default server-side templating language.
+[Angular templates] are used in client-side.
+
+Server-side templates are loaded from the `/views/` directory.
+Client-side templates are loaded from the `/public/templates/` directory.
+
 
 ### TODO
 
