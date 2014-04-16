@@ -1,7 +1,7 @@
 {
   "name": "generator-powder",
   "version": "0.2.0",
-  "description": "Powder.js yeoman generator",
+  "description": "Powder.js generator for yeoman",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "yamalight/generator-powder",
