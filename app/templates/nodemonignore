@@ -1,9 +1,6 @@
 # Ignore git repos
 **/.git/**
 
-# Ignore idea stuff
-.idea/**/*
-
 # Ignore public web files
 public/**/*
 
@@ -14,4 +11,3 @@ tests/**
 **/*.html
 **/*.dust
 README.md
-nohup.out

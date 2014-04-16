@@ -25,13 +25,21 @@ var PowderGenerator = yeoman.generators.Base.extend({
     // replace it with a short and sweet description of your generator
     this.log(chalk.magenta('You\'re using the fantastic Powder generator.'));
 
-    var prompts = [{
+    var prompts = [
+    {
       name: 'appName',
       message: 'What do you want to call your app?'
+    },
+    {
+        type: 'confirm',
+        name: 'addAuth',
+        message: 'Would you like to include basic auth?',
+        default: true
     }];
 
     this.prompt(prompts, function (props) {
       this.appName = props.appName;
+      this.addAuth = props.addAuth;
 
       done();
     }.bind(this));
@@ -42,7 +50,6 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.mkdir('bin');
     this.mkdir('controllers');
     this.mkdir('controllers/api');
-    this.mkdir('controllers/auth');
     this.mkdir('controllers/main');
     this.mkdir('db');
     this.mkdir('gulp');
@@ -53,6 +60,12 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.mkdir('public/css');
     this.mkdir('public/img');
     this.mkdir('public/js');
+    this.mkdir('public/js/controllers');
+    this.mkdir('public/js/data');
+    this.mkdir('public/js/directives');
+    this.mkdir('public/js/filters');
+    this.mkdir('public/js/modules');
+    this.mkdir('public/js/services');
     this.mkdir('public/templates');
     this.mkdir('tests');
     this.mkdir('views');
@@ -60,6 +73,11 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.mkdir('views/errors');
     this.mkdir('views/helpers');
     this.mkdir('views/menu');
+
+    // only create auth folder if needed
+    if(this.addAuth) {
+        this.mkdir('controllers/auth');
+    }
   },
 
   copyMainFiles: function(){
@@ -90,8 +108,6 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.directory('_bin', 'bin');
     // controllers
     this.directory('_controllers/api', 'controllers/api');
-    this.directory('_controllers/auth', 'controllers/auth');
-    this.directory('_controllers/main', 'controllers/main');
     // db
     this.directory('_db', 'db');
     // gulp
@@ -105,7 +121,6 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.directory('_public/css', 'public/css');
     this.directory('_public/img', 'public/img');
     this.directory('_public/js', 'public/js');
-    this.directory('_public/js/controllers', 'public/js/controllers');
     this.directory('_public/js/data', 'public/js/data');
     this.directory('_public/js/directives', 'public/js/directives');
     this.directory('_public/js/filters', 'public/js/filters');
@@ -115,7 +130,6 @@ var PowderGenerator = yeoman.generators.Base.extend({
     // tests
     this.directory('_tests', 'tests');
     // views
-    this.directory('_views', 'views');
     this.directory('_views/core', 'views/core');
     this.directory('_views/errors', 'views/errors');
     this.directory('_views/helpers', 'views/helpers');
@@ -123,6 +137,18 @@ var PowderGenerator = yeoman.generators.Base.extend({
 
     // readme
     this.template('_README.md', 'README.md');
+
+    // process auth stuff if needed
+    if(this.addAuth) {
+        this.directory('_controllers/auth', 'controllers/auth');
+        this.directory('_controllers/main', 'controllers/main');
+        this.directory('_public/js/controllers', 'public/js/controllers');
+        this.directory('_views', 'views');
+    } else {
+        this.copy('_controllers/main/index.js', 'controllers/main/index.js');
+        this.copy('_public/js/controllers/home.js', 'public/js/controllers/home.js');
+        this.copy('_views/index.dust', 'views/index.dust');
+    }
   }
 });
 

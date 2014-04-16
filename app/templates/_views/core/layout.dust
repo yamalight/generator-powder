@@ -13,7 +13,7 @@
     <meta name="author" content="Tim Ermilov">
 
     <!-- title -->
-    <title>{+title}<%= _.slugify(appName) %>{/title}</title>
+    <title>{+title}<%= appName %>{/title}</title>
 
     <!-- apple icon -->
     <link rel="apple-touch-icon" href="/img/icon.png" />
@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/" target="_self"><%= _.slugify(appName) %></a>
+                <a class="navbar-brand" href="/" target="_self"><%= appName %></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
