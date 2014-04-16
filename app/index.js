@@ -124,7 +124,9 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.copy('_public/js/app.js', 'public/js/app.js');
     this.copy('_public/js/controllers.js', 'public/js/controllers.js');
     this.copy('_public/js/directives.js', 'public/js/directives.js');
+    this.copy('_public/js/filters.js', 'public/js/filters.js');
     this.copy('_public/js/routes.js', 'public/js/routes.js');
+    this.copy('_public/js/services.js', 'public/js/services.js');
     // client-side data
     this.directory('_public/js/data', 'public/js/data');
     // angular directives
