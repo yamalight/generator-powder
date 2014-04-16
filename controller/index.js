@@ -29,12 +29,21 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
     this.template('_view.dust', 'views/' + this.name + '.dust');
     this.template('_controller.js', 'controllers/main/' + this.name + '.js');
     this.template('_clientController.js', 'public/js/controllers/' + this.name + '.js');
+    this.template('_template.html', 'public/templates/' + this.name + '.html');
 
     // modify client-side controllers file
     var path = 'public/js/controllers.js';
     var file = this.readFileAsString(path);
     var controllerString = '    app.controller(\'' + this.name + 'Controller\', [\'$scope\', require(\'./controllers/' + this.name + '.js\')]);';
     file = file.replace('};', controllerString + '\n};');
+    this.write(path, file);
+
+    // modify client-side routes file
+    path = 'public/js/routes.js';
+    file = this.readFileAsString(path);
+    var routeString = '$routeProvider.when(\'' + this.controllerPath + '\', { controller: \'' +
+                        this.name + 'Controller\', templateUrl: \'/templates/' + this.name + '.html\' });';
+    file = file.replace('$locationProvider.html5Mode(true);', routeString + '\n\n        $locationProvider.html5Mode(true);');
     this.write(path, file);
   }
 });

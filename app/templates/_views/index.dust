@@ -8,5 +8,6 @@
 {<body}
     <div class="container" ng-controller="HomeController">
         <h1>You are in!</h1>
+        <div ng-view></div>
     </div>
 {/body}

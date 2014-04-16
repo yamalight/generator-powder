@@ -8,5 +8,6 @@
 {<body}
     <div class="container" ng-controller="<%= name %>Controller">
         <h1>This is <%= name %>!</h1>
+        <div ng-view></div>
     </div>
 {/body}
