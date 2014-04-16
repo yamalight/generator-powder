@@ -1,5 +1,4 @@
 // includes
-var express = require('express');
 var fs = require('fs');
 
 module.exports = function(parent, options){
@@ -16,9 +15,8 @@ module.exports = function(parent, options){
                 console.log('\n   %s:', cname);
             }
 
-            var obj = require('./../controllers/' + dname + '/' + cname),
-                name = obj.name || dname,
-                method, path, key;
+            var obj = require('./../controllers/' + dname + '/' + cname);
+            var method, path, key;
 
             // generate routes based
             // on the exported methods

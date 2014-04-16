@@ -1,4 +1,8 @@
 // includes
+// async-await fetures
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
+// config
 var config = require('../../config');
 // db
 var User = require('../../db/user').User;
@@ -11,35 +15,31 @@ var crypto = require('crypto');
 // make passport policy
 var LocalStrategy = passportLocal.Strategy;
 passport.use(new LocalStrategy(
-    function (username, password, done) {
-        User.findOne({username: username}, function(err, user) {
-            if (err) {
-                return done(err);
-            }
-            if (!user) {
-                return done(null, false);
-            }
+    async(function (username, password, done) {
+        var user = await(User.findOne({username: username}).exec());
+        if (!user) {
+            return done(null, false);
+        }
 
-            // encode password
-            var md5sum = crypto.createHash('md5');
-            md5sum.update(password + config.passwordSalt);
-            var passHex = md5sum.digest('hex');
+        // encode password
+        var md5sum = crypto.createHash('md5');
+        md5sum.update(password + config.passwordSalt);
+        var passHex = md5sum.digest('hex');
 
-            // check
-            if (passHex !== user.password) {
-                return done(null, false);
-            }
-            // if all is OK, return user
-            return done(null, user);
-        });
-    }
+        // check
+        if (passHex !== user.password) {
+            return done(null, false);
+        }
+        // if all is OK, return user
+        return done(null, user);
+    })
 ));
 
 // export index
 exports.register = {
     path: '/auth/register',
     method: 'post',
-    returns: function(req, res, next){
+    returns: async(function(req, res, next){
         // check password for match
         if(req.body.passwordNew !== req.body.passwordRepeat) {
             req.flash('error', 'Passwords do not match!');
@@ -49,7 +49,7 @@ exports.register = {
 
         // hash password
         var md5sum = crypto.createHash('md5');
-        md5sum.update(req.body.password + config.passwordSalt);
+        md5sum.update(req.body.passwordNew + config.passwordSalt);
         var passHex = md5sum.digest('hex');
 
         // make new user data
@@ -59,29 +59,24 @@ exports.register = {
         };
 
         // check if user exists
-        User.findOne({username: newUser.username}, function(err, user) {
-            if (err) {
-                return next(err);
-            }
-
-            if(user){
-                req.flash('error', 'User already exists!');
-                req.flash('oldData', req.body);
-                return res.redirect('/register');
-            } else {
-                // create new user
-                var userModel = new User(newUser);
-                userModel.save(function(err){
-                    if (err) {
-                        return next(err);
-                    } else {
-                        // if all is OK, redirect to root
-                        return res.redirect('/');
-                    }
-                });
-            }
-        });
-    }
+        var user = await(User.findOne({username: newUser.username}).exec());
+        if(user){
+            req.flash('error', 'User already exists!');
+            req.flash('oldData', req.body);
+            return res.redirect('/register');
+        } else {
+            // create new user
+            var userModel = new User(newUser);
+            userModel.save(function(err){
+                if (err) {
+                    return next(err);
+                } else {
+                    // if all is OK, redirect to root
+                    return res.redirect('/');
+                }
+            });
+        }
+    })
 };
 
 exports.login = {

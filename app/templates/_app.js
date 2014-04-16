@@ -28,7 +28,7 @@ require('./app/customrender')(app);
 require('./app/accesscontrol')(app);
 
 // load controllers
-require('./lib/boot')(app, { verbose: !module.parent });
+require('./lib/boot')(app, { verbose: config.debug || !module.parent });
 
 // load error routes (404. 5xx)
 require('./app/errorhandling')(app);
