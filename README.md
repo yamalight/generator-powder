@@ -2,6 +2,21 @@
 
 Generator for scaffolding out Powder.js applications
 
+## About Powder.js
+
+Powder.js is a combination of existing frameworks, tools and libraries that allows fast and simple web app creation.  
+Server-side of powder.js is powered by [Express.js](http://expressjs.com/) with data and sessions stored in MongoDB accessed using [Mongoose.js](http://mongoosejs.com/).  
+Server-side templating is done via Linkedin version of [Dust.js](http://linkedin.github.io/dustjs/).  
+If needed, basic local authorisation can be generated using [passport.js](http://passportjs.org/).  
+Client-side is built using [Angular.js](http://angularjs.org/) with ngRoute, [Twitter Bootstrap](http://getbootstrap.com/) and [jQuery](http://jquery.com/).  
+All the client-side libraries are managed and compiled by [Browserify](http://browserify.org/) with as many dependencies being managed by npm as possible.  
+[Bower](http://bower.io/) is used for the client-side dependencies that are not available through npm.  
+[Gulp.js](http://gulpjs.com/) is used as a build-tool.  
+In addition to build and testing tasks, gulp as well handles all the things related to encapsulating bower dependencies into Browserify without any additional actions from the developer.
+Testing is done using [jshint](http://www.jshint.com/) for linting and [mocha.js](http://visionmedia.github.io/mocha/) with [should.js](https://github.com/visionmedia/should.js/) for automated testing.  
+Default test suite includes two different test files - one for API using simple JSON, and one for browser using [zombie.js](http://zombie.labnotes.org/).  
+In addition, powder.js utilizes [asyncawait](https://github.com/yortus/asyncawait) and promises (using [bluebird](https://github.com/petkaantonov/bluebird)) to simplify asynchronous code.  
+
 ## Getting Started
 
 ### Installation
@@ -120,6 +135,44 @@ Data models are separated from the controller logic resulting in cleaner, more o
 Server-side templates are loaded from the `/views/` directory.
 Client-side templates are loaded from the `/public/templates/` directory.
 
+### Async/await
+
+Powder.js utilizes [Asyncawait](https://github.com/yortus/asyncawait) and promises (using [bluebird](https://github.com/petkaantonov/bluebird)) to simplify asynchronous code.  
+
+This allows simplifying this code which is considered your typical js callback hell:  
+```js
+function foo(callback) {
+    firstAsyncCall(function (err, resultA) {
+        if (err) { callback(err); return; }
+        secondAsyncCallUsing(resultA, function (err, resultB) {
+            if (err) { callback(err); return; }
+            thirdAsyncCallUsing(resultB, function (err, resultC) {
+                if (err) {
+                    callback(err);
+                } else {
+                    callback(null, doSomethingWith(resultC));
+                }
+            });
+
+        });
+    });
+}
+```
+
+To simple and readable code like this:  
+```js
+var foo = async (function() {
+    var resultA = await (firstAsyncCall());
+    var resultB = await (secondAsyncCallUsing(resultA));
+    var resultC = await (thirdAsyncCallUsing(resultB));
+    return (doSomethingWith(resultC));
+});
+```
+
+Note that await function will only work with functions that return promises.  
+If you are using libraries or third-party functions that do not return promises, you can use bluebirds `.promisify()` or `.promisifyAll()` functions to turn them into promises and allow usage with asyncawait.
+
+For more info, please refer to [asyncawait](https://github.com/yortus/asyncawait) and [bluebird](https://github.com/petkaantonov/bluebird) docs.
 
 ### TODO
 
@@ -127,4 +180,4 @@ Add more docs and subgenerators.
 
 ## License
 
-MIT
+[MIT](http://opensource.org/licenses/MIT)
