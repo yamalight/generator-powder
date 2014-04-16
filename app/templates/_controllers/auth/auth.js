@@ -88,7 +88,7 @@ exports.login = {
     path: '/auth/login',
     method: 'post',
     returns: function(req, res, next){
-        passport.authenticate('local', function(err, user, info) {
+        passport.authenticate('local', function(err, user) {
             if (err) {
                 return next(err);
             }
@@ -112,7 +112,7 @@ exports.login = {
 exports.logout = {
     path: '/auth/logout',
     method: 'get',
-    returns: function(req, res, next){
+    returns: function(req, res){
         req.logout();
         res.redirect('/');
     }

@@ -3,7 +3,7 @@
 exports.auth = {
     path: '/auth',
     method: 'get',
-    returns: function(req, res, next) {
+    returns: function(req, res) {
         return res.render('auth', {error: req.flash('error'), oldData: req.flash('oldData')});
     }
 };
@@ -12,7 +12,7 @@ exports.auth = {
 exports.register = {
     path: '/register',
     method: 'get',
-    returns: function(req, res, next) {
+    returns: function(req, res) {
         return res.render('register', {error: req.flash('error'), oldData: req.flash('oldData')});
     }
 };
@@ -21,7 +21,7 @@ exports.register = {
 exports.logout = {
     path: '/logout',
     method: 'get',
-    returns: function(req, res, next){
+    returns: function(req, res){
         req.logout();
         res.redirect('/');
     }
