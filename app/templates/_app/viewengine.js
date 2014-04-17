@@ -14,4 +14,6 @@ module.exports = function(app, dirname) {
 
     // serve static files
     app.use(express.static(dirname + '/public'));
+    // serve bower components as static
+    app.use('/bower_components', express.static(dirname + '/bower_components'));
 };

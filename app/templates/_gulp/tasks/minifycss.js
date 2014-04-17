@@ -7,7 +7,7 @@ var config = require('../../config');
 module.exports = function() {
     gulp.src([
         './public/css/*.css',
-        './public/bower_components/bootstrap/dist/css/bootstrap.min.css',
+        './bower_components/bootstrap/dist/css/bootstrap.min.css',
     ])
     .pipe(minifyCSS({
         debug: config.debug,

@@ -94,7 +94,6 @@ var PowderGenerator = yeoman.generators.Base.extend({
   projectfiles: function () {
     // copy suplementary files
     this.copy('jshintrc', '.jshintrc');
-	this.copy('bowerrc', '.bowerrc');
     this.copy('nodemonignore', '.nodemonignore');
 
     // copy app
