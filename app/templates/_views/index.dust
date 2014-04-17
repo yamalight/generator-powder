@@ -1,4 +1,4 @@
-{>"core/layout.dust"/}
+{#debug}{>"core/layout.dust"/}{:else}{>"core/layout.cdn.dust"/}{/debug}
 {<menu}
     {>"menu/mainmenu.dust" home="true" /}
 {/menu}
