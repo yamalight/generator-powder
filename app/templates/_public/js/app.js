@@ -1,10 +1,3 @@
-// load bower libs
-window.$ = window.jQuery = require('jquery');
-require('bootstrap');
-// load angular and router
-var angular = require('angular');
-require('angular-router-browserify')(angular);
-
 // init app
 var app = angular.module('app', ['ngRoute']);
 

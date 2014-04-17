@@ -8,8 +8,6 @@
     "postinstall": "./node_modules/.bin/gulp init"
   },
   "dependencies": {
-    "angular": "^1.2.15",
-    "angular-router-browserify": "0.0.1",
     "asyncawait": "^0.6.1",
     "bluebird": "^1.2.2",
     "body-parser": "^1.0.2",
@@ -24,15 +22,14 @@
     "dustjs-linkedin": "^2.2.8",
     "express": "^4.0.0",
     "express-session": "^1.0.2",
-    "jquery": "^2.1.1-beta1",
+  	"lodash": "^2.4.1",
     "method-override": "^1.0.0",
     "mongoose": "^3.8.8",
     "optimist": "^0.6.1",
     "passport": "^0.2.0",<% if(addAuth) { %>
     "passport-local": "^1.0.0",<% } %>
     "portfinder": "^0.2.1",
-    "request": "^2.34.0",
-    "underscore": "^1.6.0"
+    "request": "^2.34.0"
   },
   "devDependencies": {
     "browserify": "^3.38.0",
