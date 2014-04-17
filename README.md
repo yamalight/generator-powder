@@ -9,8 +9,8 @@ Server-side of powder.js is powered by [Express.js](http://expressjs.com/) with 
 Server-side templating is done via Linkedin version of [Dust.js](http://linkedin.github.io/dustjs/).  
 If needed, basic local authorisation can be generated using [passport.js](http://passportjs.org/).  
 Client-side is built using [Angular.js](http://angularjs.org/) with ngRoute, [Twitter Bootstrap](http://getbootstrap.com/) and [jQuery](http://jquery.com/).  
-All the client-side libraries are managed and compiled by [Browserify](http://browserify.org/) with as many dependencies being managed by npm as possible.  
-[Bower](http://bower.io/) is used for the client-side dependencies that are not available through npm.  
+All the client-side app code is managed and compiled by [Browserify](http://browserify.org/).  
+[Bower](http://bower.io/) is used for the client-side dependencies which are loaded directly from core template. All dependencies available on CDNs should be replaced to those before deploying.  
 [Gulp.js](http://gulpjs.com/) is used as a build-tool.  
 In addition to build and testing tasks, gulp as well handles all the things related to encapsulating bower dependencies into Browserify without any additional actions from the developer.
 Testing is done using [jshint](http://www.jshint.com/) for linting and [mocha.js](http://visionmedia.github.io/mocha/) with [should.js](https://github.com/visionmedia/should.js/) for automated testing.  
@@ -132,7 +132,7 @@ Data models are separated from the controller logic resulting in cleaner, more o
 [Dust JavaScript templates](https://github.com/linkedin/dustjs) are the default server-side templating language.
 [Angular templates] are used in client-side.
 
-Server-side templates are loaded from the `/views/` directory.
+Server-side templates are loaded from the `/views/` directory.  
 Client-side templates are loaded from the `/public/templates/` directory.
 
 ### Async/await
