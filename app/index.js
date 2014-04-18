@@ -44,6 +44,7 @@ var PowderGenerator = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.appName = props.appName;
+      this.camelizedAppName = this._.camelize(this.appName);
       this.addAuth = props.addAuth;
       this.addCDN = props.addCDN;
 
@@ -61,6 +62,8 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.mkdir('gulp');
     this.mkdir('gulp/tasks');
     this.mkdir('lib');
+    this.mkdir('logger');
+    this.mkdir('logs');
     this.mkdir('modules');
     this.mkdir('public');
     this.mkdir('public/css');
@@ -121,6 +124,8 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.directory('_gulp/tasks', 'gulp/tasks');
     // lib
     this.directory('_lib', 'lib');
+    // logger
+    this.directory('_logger', 'logger');
     // modules
     this.directory('_modules', 'modules');
     // client-side css/img files

@@ -13,7 +13,7 @@ exports.passwordSalt = 'ThisIsPasswordSalt';
 exports.defaultPort = 8080;
 
 // default db
-exports.db = 'mongodb://localhost/<%= _.slugify(appName) %>';
+exports.db = 'mongodb://localhost/<%= camelizedAppName %>';
 
 // session config
 exports.sessionDb = {

@@ -11,6 +11,7 @@
     "asyncawait": "^0.6.1",
     "bluebird": "^1.2.2",
     "body-parser": "^1.0.2",
+    "bunyan": "^0.22.3",
     "colors": "^0.6.2",
     "connect": "^2.14.4",
     "connect-flash": "^0.1.1",
