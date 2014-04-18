@@ -35,11 +35,17 @@ var PowderGenerator = yeoman.generators.Base.extend({
         name: 'addAuth',
         message: 'Would you like to include basic auth?',
         default: true
+    },{
+        type: 'confirm',
+        name: 'addCDN',
+        message: 'Would you like to include CDN generator for client-side js libraries?',
+        default: true
     }];
 
     this.prompt(prompts, function (props) {
       this.appName = props.appName;
       this.addAuth = props.addAuth;
+      this.addCDN = props.addCDN;
 
       done();
     }.bind(this));
@@ -111,7 +117,7 @@ var PowderGenerator = yeoman.generators.Base.extend({
     // db
     this.directory('_db', 'db');
     // gulp
-    this.directory('_gulp', 'gulp');
+    this.copy('_gulp/index.js', 'gulp/index.js');
     this.directory('_gulp/tasks', 'gulp/tasks');
     // lib
     this.directory('_lib', 'lib');
@@ -149,6 +155,11 @@ var PowderGenerator = yeoman.generators.Base.extend({
 
     // readme
     this.template('_README.md', 'README.md');
+
+    // process CDN stuff
+    if(this.addCDN) {
+        this.copy('_gulp/_optional/cdn.js', 'gulp/tasks/cdn.js');
+    }
 
     // process auth stuff if needed
     if(this.addAuth) {

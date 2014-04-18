@@ -1,4 +1,4 @@
-{#debug}{>"core/layout.dust"/}{:else}{>"core/layout.cdn.dust"/}{/debug}
+<% if(addCDN) { %>{#debug}{>"core/layout.dust"/}{:else}{>"core/layout.cdn.dust"/}{/debug}<% } else {%>{>"core/layout.dust"/}<% } %>
 {<menu}
     {>"menu/mainmenu.dust" home="true" /}
 {/menu}

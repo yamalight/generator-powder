@@ -16,10 +16,16 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
       name: 'controllerPath',
       message: 'What path do you want to use for your controller?',
       default: '/' + this.name,
+    },{
+        type: 'confirm',
+        name: 'addCDN',
+        message: 'Does your core uses CDN generator for client-side js libraries?',
+        default: true
     }];
 
     this.prompt(prompts, function (props) {
       this.controllerPath = props.controllerPath;
+      this.addCDN = props.addCDN;
 
       done();
     }.bind(this));
@@ -41,9 +47,10 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
     // modify client-side routes file
     path = 'public/js/routes.js';
     file = this.readFileAsString(path);
-    var routeString = '$routeProvider.when(\'' + this.controllerPath + '\', { controller: \'' +
+    var textToReplace = '\n        $locationProvider.html5Mode(true);';
+    var routeString = '        $routeProvider.when(\'' + this.controllerPath + '\', { controller: \'' +
                         this.name + 'Controller\', templateUrl: \'/templates/' + this.name + '.html\' });';
-    file = file.replace('$locationProvider.html5Mode(true);', routeString + '\n\n        $locationProvider.html5Mode(true);');
+    file = file.replace(textToReplace, routeString + '\n\n        $locationProvider.html5Mode(true);');
     this.write(path, file);
   }
 });

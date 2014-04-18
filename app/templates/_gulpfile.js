@@ -7,11 +7,11 @@ var gulp = require('./gulp')([
     'bootstrap',
     'jshint',
     'mocha',
-    'inject',
-    'cdn',
+    'inject',<% if(addCDN) { %>
+    'cdn',<% } %>
 ]);
 
 gulp.task('init', ['bower', 'bootstrap']);
-gulp.task('build', ['browserify', 'inject', 'minifycss', 'cdn']);
+gulp.task('build', ['browserify', 'inject', 'minifycss'<% if(addCDN) { %>, 'cdn'<% } %>]);
 gulp.task('test', ['jshint', 'mocha']);
 gulp.task('default', ['build', 'watch', 'serve']);
