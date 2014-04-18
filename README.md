@@ -10,7 +10,7 @@ Server-side templating is done via Linkedin version of [Dust.js](http://linkedin
 If needed, basic local authorisation can be generated using [passport.js](http://passportjs.org/).  
 Client-side is built using [Angular.js](http://angularjs.org/) with ngRoute, [Twitter Bootstrap](http://getbootstrap.com/) and [jQuery](http://jquery.com/).  
 All the client-side app code is managed and compiled by [Browserify](http://browserify.org/).  
-[Bower](http://bower.io/) is used for the client-side dependencies which are loaded directly from core template. All dependencies available on CDNs should be replaced to those before deploying.  
+[Bower](http://bower.io/) is used for the client-side dependencies which are loaded directly from core template. All dependencies available on CDNs might be replaced to those before deploying.  
 [Gulp.js](http://gulpjs.com/) is used as a build-tool.  
 In addition to build and testing tasks, gulp as well handles all the things related to encapsulating bower dependencies into project without any additional actions from the developer. It as well created version of layout with libraries located on CDN. If you'd like to include your own libraries, please add CDN locations to `gulp/tasks/cdn.js`.  
 Testing is done using [jshint](http://www.jshint.com/) for linting and [mocha.js](http://visionmedia.github.io/mocha/) with [should.js](https://github.com/visionmedia/should.js/) for automated testing.  
