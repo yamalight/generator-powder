@@ -5,7 +5,7 @@ var await = require('asyncawait/await');
 // config
 var config = require('../../config');
 // db
-var User = require('../../db/user').User;
+var User = require('../../db').User;
 // passport
 var passport = require('passport');
 var passportLocal = require('passport-local');

@@ -11,4 +11,4 @@ db = mongoose.connection;
 db.on('error', console.error.bind(console, '[db] connection error:'));
 
 // export
-exports.db = db;
+module.exports = db;
