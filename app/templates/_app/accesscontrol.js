@@ -6,13 +6,13 @@ module.exports = function(app) {
 
         // if route is allowed w/o reg
         if(unauthAllowedRoutes.indexOf(url) !== -1) {
-            next();
+            return next();
         } else if(req.user) {
-            next();
+            return next();
         } else {
-            next(new Error(401));
+            return next(new Error(401));
         }<% } else { %>
         // add your auth url checks here
-        next();<% } %>
+        return next();<% } %>
     });
 };
