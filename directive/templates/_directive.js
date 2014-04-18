@@ -1,4 +1,4 @@
-module.exports = function <%= camelizedName %> () {
+module.exports = function <%= camelizedName %>Directive () {
     return {
         template: '<div></div>',
         restrict: 'E',

@@ -1,9 +1,9 @@
 
 // export index
-exports.<%= name %> = {
+exports.<%= camelizedName %> = {
     path: '<%= controllerPath %>',
     method: 'get',
     returns: function(req, res) {
-        return res.render('<%= name %>');
+        return res.render('<%= camelizedName %>');
     }
 };

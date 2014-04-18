@@ -6,8 +6,8 @@
     {>"menu/mainmenuRight.dust" user=user /}
 {/menu_right}
 {<body}
-    <div class="container" ng-controller="<%= name %>Controller">
-        <h1>This is <%= name %>!</h1>
+    <div class="container" ng-controller="<%= camelizedName %>Controller">
+        <h1>This is <%= camelizedName %>!</h1>
         <div ng-view></div>
     </div>
 {/body}

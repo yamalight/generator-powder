@@ -36,14 +36,17 @@ $ yo powder
 `$ yo powder`  
 Creates a new powder.js application.
 
-`$ yo powder:controller myController`  
-Generates a new controller named *myController* and it's dependencies and injects it into main app.
+`$ yo powder:controller myName`  
+Generates a new controller named *myNameController* and it's dependencies and injects it into main app.
 
-`$ yo powder:directive myDirective`  
-Generates a new angular directive named *myDirective* and injects it into main app.
+`$ yo powder:directive myName`  
+Generates a new angular directive named *myNameDirective* and injects it into main app.
 
-`$ yo powder:filter myFilter`  
-Generates a new angular filter named *myFilter* and injects it into main app.
+`$ yo powder:filter myName`  
+Generates a new angular filter named *myNameFilter* and injects it into main app.
+
+`$ yo powder:service myName`  
+Generates a new angular service named *myNameService* and injects it into main app.
 
 ## Learning Your Way Around
 

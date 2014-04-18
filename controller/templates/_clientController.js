@@ -1,3 +1,3 @@
-module.exports = function <%= name %>Controller($scope) {
+module.exports = function <%= camelizedName %>Controller($scope) {
     $scope.test = '';
 };

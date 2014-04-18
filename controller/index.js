@@ -7,6 +7,7 @@ var chalk = require('chalk');
 var ControllerGenerator = yeoman.generators.NamedBase.extend({
   init: function () {
     console.log('You called the controller subgenerator with the argument ' + this.name + '.');
+    this.camelizedName = this._.camelize(this.name);
   },
 
   askFor: function () {
@@ -32,15 +33,15 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
   },
 
   files: function () {
-    this.template('_view.dust', 'views/' + this.name + '.dust');
-    this.template('_controller.js', 'controllers/main/' + this.name + '.js');
-    this.template('_clientController.js', 'public/js/controllers/' + this.name + '.js');
-    this.template('_template.html', 'public/templates/' + this.name + '.html');
+    this.template('_view.dust', 'views/' + this.camelizedName + '.dust');
+    this.template('_controller.js', 'controllers/main/' + this.camelizedName + '.js');
+    this.template('_clientController.js', 'public/js/controllers/' + this.camelizedName + '.js');
+    this.template('_template.html', 'public/templates/' + this.camelizedName + '.html');
 
     // modify client-side controllers file
     var path = 'public/js/controllers.js';
     var file = this.readFileAsString(path);
-    var controllerString = '    app.controller(\'' + this.name + 'Controller\', [\'$scope\', require(\'./controllers/' + this.name + '.js\')]);';
+    var controllerString = '    app.controller(\'' + this.camelizedName + 'Controller\', [\'$scope\', require(\'./controllers/' + this.camelizedName + '.js\')]);';
     file = file.replace('};', controllerString + '\n};');
     this.write(path, file);
 
@@ -49,7 +50,7 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
     file = this.readFileAsString(path);
     var textToReplace = '\n        $locationProvider.html5Mode(true);';
     var routeString = '        $routeProvider.when(\'' + this.controllerPath + '\', { controller: \'' +
-                        this.name + 'Controller\', templateUrl: \'/templates/' + this.name + '.html\' });';
+                        this.camelizedName + 'Controller\', templateUrl: \'/templates/' + this.camelizedName + '.html\' });';
     file = file.replace(textToReplace, routeString + '\n\n        $locationProvider.html5Mode(true);');
     this.write(path, file);
   }
