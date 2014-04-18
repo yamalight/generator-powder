@@ -42,6 +42,9 @@ Generates a new controller named *myController* and it's dependencies and inject
 `$ yo powder:directive myDirective`  
 Generates a new angular directive named *myDirective* and injects it into main app.
 
+`$ yo powder:filter myFilter`  
+Generates a new angular filter named *myFilter* and injects it into main app.
+
 ## Learning Your Way Around
 
 Once installed, you can create a basic application by following the prompts.
