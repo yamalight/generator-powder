@@ -49,6 +49,9 @@ Generates a new angular filter named *myNameFilter* and injects it into main app
 `$ yo powder:service myName`  
 Generates a new angular service named *myNameService* and injects it into main app.
 
+`$ yo powder:model myName`  
+Generates a new mongoose model named *myName* and injects it into main app.
+
 ## Learning Your Way Around
 
 Once installed, you can create a basic application by following the prompts.
