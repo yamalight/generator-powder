@@ -1,4 +1,6 @@
-# <%= _.slugify(appName) %>
+# <%= appName %>
+
+Based on [Powder.js](https://github.com/yamalight/generator-powder)
 
 ### Requirements
 
