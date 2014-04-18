@@ -34,10 +34,13 @@ $ yo powder
 ### API
 
 `$ yo powder`  
-Creates a new powder application.
+Creates a new powder.js application.
 
 `$ yo powder:controller myController`  
-Generates a new controller named *myController* and it's dependencies.
+Generates a new controller named *myController* and it's dependencies and injects it into main app.
+
+`$ yo powder:directive myDirective`  
+Generates a new angular directive named *myDirective* and injects it into main app.
 
 ## Learning Your Way Around
 
