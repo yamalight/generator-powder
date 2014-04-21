@@ -58,7 +58,7 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.mkdir('controllers');
     this.mkdir('controllers/api');
     this.mkdir('controllers/main');
-    this.mkdir('db');
+    this.mkdir('models');
     this.mkdir('gulp');
     this.mkdir('gulp/tasks');
     this.mkdir('lib');
@@ -117,8 +117,8 @@ var PowderGenerator = yeoman.generators.Base.extend({
     this.directory('_bin', 'bin');
     // controllers
     this.directory('_controllers/api', 'controllers/api');
-    // db
-    this.directory('_db', 'db');
+    // models / db
+    this.directory('_models', 'models');
     // gulp
     this.copy('_gulp/index.js', 'gulp/index.js');
     this.directory('_gulp/tasks', 'gulp/tasks');

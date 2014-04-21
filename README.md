@@ -89,7 +89,7 @@ listening on port 8080
 
 - **/app/** - Application and middleware configuration
 - **/controllers/** - Application routes
-- **/db/** - Database config and model definitions
+- **/models/** - Database config and models definitions
 - **/gulp/** - Gulp configuration files
 - **/lib/** - Express.js route loader
 - **/modules/** - Server-side user modules
@@ -138,7 +138,7 @@ When a new controller is created, the generator will also create both client and
 
 ### Models
 
-Data models are separated from the controller logic resulting in cleaner, more organized code. Data models live in the `/db/` folder.
+Data models are separated from the controller logic resulting in cleaner, more organized code. Data models live in the `/models/` folder.
 
 ### Templates
 

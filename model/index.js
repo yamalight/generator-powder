@@ -27,10 +27,10 @@ var ModelGenerator = yeoman.generators.NamedBase.extend({
   },
 
   files: function () {
-    this.template('_model.js', 'db/' + this.camelizedName + '.js');
+    this.template('_model.js', 'models/' + this.camelizedName + '.js');
 
     // modify client-side directives file
-    var path = 'db/index.js';
+    var path = 'models/index.js';
     var file = this.readFileAsString(path);
     var newModelString = '\nexports.' + this.camelizedName + ' = require(\'./' + this.camelizedName + '.js\');';
     file += newModelString;
