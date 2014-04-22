@@ -10,10 +10,9 @@ module.exports = function() {
     return gulp.src('./public/js/app.js')
         .pipe(browserify({
             debug: config.debug,
-            transform: ['debowerify', 'deamdify'],
             ignore: 'app.min.js',
         }))
-        .pipe(gulpif(!config.debug, uglify()))
+        .pipe(gulpif(!config.debug, uglify({mangle: false})))
         .pipe(rename('app.min.js'))
         .pipe(gulp.dest('./public/dist/'))
         .pipe(livereload());

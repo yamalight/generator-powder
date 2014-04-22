@@ -12,7 +12,8 @@
         "module",
         "__dirname",
         "exports",
-        "process"
+        "process",
+        "angular"
     ],
 
     // Development.
