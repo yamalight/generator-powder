@@ -41,7 +41,7 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
     // modify client-side controllers file
     var path = 'public/js/controllers.js';
     var file = this.readFileAsString(path);
-    var controllerString = '    app.controller(\'' + this.camelizedName + 'Controller\', [\'$scope\', require(\'./controllers/' + this.camelizedName + '.js\')]);';
+    var controllerString = '    app.controller(\'' + this.camelizedName + 'Controller\', require(\'./controllers/' + this.camelizedName + '.js\'));';
     file = file.replace('};', controllerString + '\n};');
     this.write(path, file);
 
