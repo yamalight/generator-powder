@@ -7,7 +7,15 @@ public/**/*
 # Ignore tests
 tests/**
 
+# ignore bower and npm
+node_modules/**/*
+bower_components/**/*
+
+# Ignore logs
+logs/**
+
 # Ignore misc stuff
 **/*.html
 **/*.dust
 README.md
+nohup.out

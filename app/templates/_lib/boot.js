@@ -13,7 +13,7 @@ module.exports = function(parent, options){
 
             // define vars
             if (verbose) {
-                logger.info('\n   %s:', cname);
+                logger.info('[file]: %s:', cname);
             }
 
             var obj = require('./../controllers/' + dname + '/' + cname);
@@ -27,7 +27,7 @@ module.exports = function(parent, options){
                 parent[method](path, obj[key].returns);
 
                 if (verbose) {
-                    logger.info('  %s %s -> %s', method.toUpperCase(), path, key);
+                    logger.info('[route]: %s %s -> %s', method.toUpperCase(), path, key);
                 }
             }
         });

@@ -49,11 +49,11 @@
     "gulp-livereload": "^1.2.0",
     "gulp-minify-css": "^0.3.1",
     "gulp-mocha": "^0.4.1",
+    "gulp-nodemon": "^1.0.2",
     "gulp-open": "^0.2.8",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^0.2.1",
     "gulp-watch": "^0.5.3",
-    "nodemon": "^1.0.17",
     "should": "^3.3.0",
     "zombie": "^2.0.0-alpha9"
   }
