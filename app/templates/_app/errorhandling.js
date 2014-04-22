@@ -1,3 +1,5 @@
+var logger = require('../logger');
+
 module.exports = function(app) {
     // assume "not found" in the error msgs
     // is a 404. this is somewhat silly, but
@@ -16,7 +18,7 @@ module.exports = function(app) {
         }
 
         // log it
-        console.error(err.stack);
+        logger.error(err.stack);
 
         // error page
         res.status(500).render('errors/5xx');
