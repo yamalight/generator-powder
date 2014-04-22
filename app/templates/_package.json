@@ -33,9 +33,7 @@
     "request": "^2.34.0"
   },
   "devDependencies": {
-    "browserify": "^3.44.1",
-    "deamdify": "^0.1.1",
-    "debowerify": "^0.7.0",
+    "browserify": "^3.44.2",
     "gulp": "^3.6.0",
     "gulp-bower": "0.0.4",
     "gulp-bower-files": "^0.2.2",
