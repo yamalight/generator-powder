@@ -1,6 +1,7 @@
 // includes
 var express = require('express');
 var config = require('./config');
+var logger = require('./logger');
 
 // deploy test
 // make app
@@ -36,5 +37,5 @@ require('./app/errorhandling')(app);
 // if running in single debug mode
 if (!module.parent) {
     app.listen(config.defaultPort);
-    console.log('\n  listening on port '+config.defaultPort+'\n');
+    logger.info('\n  listening on port '+config.defaultPort+'\n');
 }

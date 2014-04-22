@@ -1,5 +1,6 @@
 // includes
 var fs = require('fs');
+var logger = require('../logger');
 
 module.exports = function(parent, options){
     var verbose = options.verbose;
@@ -12,7 +13,7 @@ module.exports = function(parent, options){
 
             // define vars
             if (verbose) {
-                console.log('\n   %s:', cname);
+                logger.info('\n   %s:', cname);
             }
 
             var obj = require('./../controllers/' + dname + '/' + cname);
@@ -26,7 +27,7 @@ module.exports = function(parent, options){
                 parent[method](path, obj[key].returns);
 
                 if (verbose) {
-                    console.log('  %s %s -> %s', method.toUpperCase(), path, key);
+                    logger.info('  %s %s -> %s', method.toUpperCase(), path, key);
                 }
             }
         });
