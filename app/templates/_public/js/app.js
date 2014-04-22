@@ -1,5 +1,5 @@
 // init app
-var app = angular.module('app', ['ngRoute', 'mgcrea.ngStrap']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'mgcrea.ngStrap']);
 
 // config app routes
 require('./routes')(app);

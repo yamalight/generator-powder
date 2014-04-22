@@ -30,6 +30,10 @@ module.exports = {
                 {
                     file: '/bower_components/angular-strap/dist/angular-strap.tpl.min.js',
                     cdn: '//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.0.0/angular-strap.tpl.min.js'
+                },
+                {
+                    file: '/bower_components/angular-animate/angular-animate.js',
+                    cdn: '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular-animate.min.js'
                 }]
             }))
             .pipe(rename('layout.cdn.dust'))
