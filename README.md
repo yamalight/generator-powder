@@ -8,7 +8,7 @@ Powder.js is a combination of existing frameworks, tools and libraries that allo
 Server-side of powder.js is powered by [Express.js](http://expressjs.com/) with data and sessions stored in MongoDB accessed using [Mongoose.js](http://mongoosejs.com/).  
 Server-side templating is done via Linkedin version of [Dust.js](http://linkedin.github.io/dustjs/).  
 If needed, basic local authorisation can be generated using [passport.js](http://passportjs.org/).  
-Client-side is built using [Angular.js](http://angularjs.org/) with ngRoute, [Twitter Bootstrap](http://getbootstrap.com/) and [jQuery](http://jquery.com/).  
+Client-side is built using [Angular.js](http://angularjs.org/) with ngRoute, [Twitter Bootstrap](http://getbootstrap.com/), [AngularStrap](http://mgcrea.github.io/angular-strap/) and [jQuery](http://jquery.com/).  
 All the client-side app code is managed and compiled by [Browserify](http://browserify.org/) and minified using [Uglify.js](https://github.com/mishoo/UglifyJS2) (when not in debug mode).  
 [Bower](http://bower.io/) is used for the client-side dependencies which are loaded directly from core template. All dependencies available on CDNs might be replaced to those before deploying.  
 [Gulp.js](http://gulpjs.com/) is used as a build-tool.  
