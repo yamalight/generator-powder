@@ -8,6 +8,7 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
   init: function () {
     console.log('You called the controller subgenerator with the argument ' + this.name + '.');
     this.camelizedName = this._.camelize(this.name);
+    this.camelizedNameLower = this.camelizedName.toLowerCase();
   },
 
   askFor: function () {
@@ -16,7 +17,7 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
     var prompts = [{
       name: 'controllerPath',
       message: 'What path do you want to use for your controller?',
-      default: '/' + this.name,
+      default: '/' + this.camelizedNameLower,
     },{
         type: 'confirm',
         name: 'addCDN',
@@ -33,15 +34,15 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
   },
 
   files: function () {
-    this.template('_view.dust', 'views/' + this.camelizedName + '.dust');
-    this.template('_controller.js', 'controllers/main/' + this.camelizedName + '.js');
-    this.template('_clientController.js', 'public/js/controllers/' + this.camelizedName + '.js');
-    this.template('_template.html', 'public/templates/' + this.camelizedName + '.html');
+    this.template('_view.dust', 'views/' + this.camelizedNameLower + '.dust');
+    this.template('_controller.js', 'controllers/main/' + this.camelizedNameLower + '.js');
+    this.template('_clientController.js', 'public/js/controllers/' + this.camelizedNameLower + '.js');
+    this.template('_template.html', 'public/templates/' + this.camelizedNameLower + '.html');
 
     // modify client-side controllers file
     var path = 'public/js/controllers.js';
     var file = this.readFileAsString(path);
-    var controllerString = '    app.controller(\'' + this.camelizedName + 'Controller\', require(\'./controllers/' + this.camelizedName + '.js\'));';
+    var controllerString = '    app.controller(\'' + this.camelizedName + 'Controller\', require(\'./controllers/' + this.camelizedNameLower + '.js\'));';
     file = file.replace('};', controllerString + '\n};');
     this.write(path, file);
 
@@ -50,7 +51,7 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
     file = this.readFileAsString(path);
     var textToReplace = '\n        $locationProvider.html5Mode(true);';
     var routeString = '        $routeProvider.when(\'' + this.controllerPath + '\', { controller: \'' +
-                        this.camelizedName + 'Controller\', templateUrl: \'/templates/' + this.camelizedName + '.html\' });';
+                        this.camelizedName + 'Controller\', templateUrl: \'/templates/' + this.camelizedNameLower + '.html\' });';
     file = file.replace(textToReplace, routeString + '\n\n        $locationProvider.html5Mode(true);');
     this.write(path, file);
   }

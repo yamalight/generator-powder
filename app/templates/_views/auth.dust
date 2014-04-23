@@ -6,7 +6,7 @@
     {>"menu/mainmenuRight.dust" user=user /}
 {/menu_right}
 {<body}
-    <div class="container" ng-controller="LoginController">
+    <div class="container">
         {#error}
         <div class="alert alert-danger">{error}</div>
         {/error}
