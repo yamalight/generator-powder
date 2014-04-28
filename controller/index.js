@@ -18,24 +18,36 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
       name: 'controllerPath',
       message: 'What path do you want to use for your controller?',
       default: '/' + this.camelizedNameLower,
-    },{
-        type: 'confirm',
-        name: 'addCDN',
-        message: 'Does your core uses CDN generator for client-side js libraries?',
-        default: true
+    },
+    {
+      type: 'confirm',
+      name: 'addServer',
+      message: 'Include server controller and template?',
+      default: true
+    },
+    {
+      type: 'confirm',
+      name: 'addCDN',
+      message: 'Does your core uses CDN generator for client-side js libraries?',
+      default: true
     }];
 
     this.prompt(prompts, function (props) {
       this.controllerPath = props.controllerPath;
       this.addCDN = props.addCDN;
+      this.addServer = props.addServer;
 
       done();
     }.bind(this));
   },
 
   files: function () {
-    this.template('_view.dust', 'views/' + this.camelizedNameLower + '.dust');
-    this.template('_controller.js', 'controllers/main/' + this.camelizedNameLower + '.js');
+    // if server is needed, copy controller and template
+    if(this.addServer) {
+      this.template('_view.dust', 'views/' + this.camelizedNameLower + '.dust');
+      this.template('_controller.js', 'controllers/main/' + this.camelizedNameLower + '.js');
+    }
+    // copy client controller
     this.template('_clientController.js', 'public/js/controllers/' + this.camelizedNameLower + '.js');
     this.template('_template.html', 'public/templates/' + this.camelizedNameLower + '.html');
 
