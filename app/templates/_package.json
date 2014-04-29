@@ -52,7 +52,7 @@
     "gulp-open": "^0.2.8",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^0.2.1",
-    "gulp-watch": "^0.5.3",
+    "gulp-watch": "^0.5.4",
     "should": "^3.3.0",
     "zombie": "^2.0.0-alpha9"
   }
