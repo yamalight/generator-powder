@@ -93,6 +93,8 @@ listening on port 8080
 - **/models/** - Database config and models definitions
 - **/gulp/** - Gulp configuration files
 - **/lib/** - Express.js route loader
+- **/logger/** - Bunyan-based logger
+- **/logs/** - Application log files
 - **/modules/** - Server-side user modules
 - **/public/css/** - CSS files
 - **/public/img/** - Client-side image files
