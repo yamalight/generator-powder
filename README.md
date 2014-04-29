@@ -39,7 +39,7 @@ $ yo powder
 Creates a new powder.js application.
 
 `$ yo powder:controller myName`  
-Generates a new controller named *myNameController* and it's dependencies and injects it into main app.
+Generates a new server-side (optional) and client-side controller named *myNameController* and it's dependencies and injects it into main app.
 
 `$ yo powder:directive myName`  
 Generates a new angular directive named *myNameDirective* and injects it into main app.
@@ -123,19 +123,18 @@ For the sake of simplicity `/controllers/` directory has two default subdirector
 For example, a route for your home page, would use a `/controllers/main/index.js` file such as:
 
 ```js
-// export index
-exports.index = {
-    path: '/',
-    method: 'get',
-    returns: function(req, res) {
+module.exports = function(app) {
+    // index
+    app.get('/', function(req, res) {
         return res.render('index');
-    }
+    });
 };
 ```
 
 This file would define the routes and the logic for the home page. The advantage of keeping routes and logic segregated in individual files starts to show as the application grows. If something fails, it's very easy to pinpoint where things went wrong.
 
-When a new controller is created, the generator will also create both client and server-side templates, routes and all needed client javascript files for you.
+When a new controller is created, the generator will also create both client and server-side templates, routes and all needed client javascript files for you.  
+It is also possible to generate client-side only controllers. To do so, simply say "No" to question about server-side templates during controller generation.
 
 ### Models
 
