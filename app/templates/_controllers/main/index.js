@@ -1,9 +1,6 @@
-
-// export index
-exports.index = {
-    path: '/',
-    method: 'get',
-    returns: function(req, res) {
+module.exports = function(app) {
+    // index
+    app.get('/', function(req, res) {
         return res.render('index');
-    }
+    });
 };

@@ -1,9 +1,6 @@
-
-// export index
-exports.api = {
-    path: '/api/',
-    method: 'get',
-    returns: function(req, res) {
+module.exports = function(app) {
+    // api index
+    app.get('/api/', function(req, res) {
         return res.send({status: 'OK'});
-    }
+    });
 };
