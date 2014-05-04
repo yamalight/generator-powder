@@ -6,7 +6,7 @@ Generator for scaffolding out Powder.js applications
 
 Powder.js is a combination of existing frameworks, tools and libraries that allows fast and simple web app creation.  
 Server-side of powder.js is powered by [Express.js](http://expressjs.com/) with data and sessions stored in MongoDB accessed using [Mongoose.js](http://mongoosejs.com/).  
-Express utilizes CSRF tokens via [csurf](https://github.com/expressjs/csurf) for increased security.  
+Express utilizes CSRF tokens via [csurf](https://github.com/expressjs/csurf) as well as [Helmet](https://github.com/evilpacket/helmet) middleware with basic config for increased security.  
 Server-side templating is done via Linkedin version of [Dust.js](http://linkedin.github.io/dustjs/).  
 If needed, basic local authorisation can be generated using [passport.js](http://passportjs.org/).  
 Client-side is built using [Angular.js](http://angularjs.org/) with ngRoute, [Twitter Bootstrap](http://getbootstrap.com/), [AngularStrap](http://mgcrea.github.io/angular-strap/) and [jQuery](http://jquery.com/).  
@@ -24,7 +24,7 @@ In addition, powder.js utilizes [asyncawait](https://github.com/yortus/asyncawai
 ### Installation
 
 ```
-$ npm install -g yo generator-powder
+$ npm install -g yo gulp generator-powder
 ```
 
 ### Usage
