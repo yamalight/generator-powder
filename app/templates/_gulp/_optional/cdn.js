@@ -13,7 +13,7 @@ module.exports = {
                 },
                 {
                     file: '/bower_components/jquery/dist/jquery.js',
-                    cdn: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js'
+                    cdn: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'
                 },
                 {
                     file: '/bower_components/angular-route/angular-route.js',
