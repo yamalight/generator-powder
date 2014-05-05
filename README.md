@@ -77,7 +77,7 @@ You're using the fantastic Powder generator.
 ...
 ```
 
-To run your application, just type `gulp` (you need to have gulp installed globally, if not use gulp from node_modules with `./node_modules/.bin/gulp`).
+To run your application, just type `gulp` (you need to have gulp installed globally with `npm -g gulp`, if not use gulp from node_modules with `./node_modules/.bin/gulp`).
 
 ```shell
 $ gulp
