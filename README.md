@@ -24,7 +24,7 @@ In addition, powder.js utilizes [asyncawait](https://github.com/yortus/asyncawai
 ### Installation
 
 ```
-$ npm install -g yo gulp generator-powder
+$ npm install -g yo generator-powder
 ```
 
 ### Usage
@@ -58,6 +58,8 @@ Generates a new mongoose model named *myName* and injects it into main app.
 Once installed, you can create a basic application by following the prompts.
 
 ```shell
+$ mkdir HelloWorld
+$ cd HelloWorld
 $ yo powder
 
      _-----_
@@ -75,12 +77,10 @@ You're using the fantastic Powder generator.
 ...
 ```
 
-To run your application, just go into the newly created directory and type `gulp`.
+To run your application, just type `gulp` (you need to have gulp installed globally, if not use gulp from node_modules with `./node_modules/.bin/gulp`).
 
 ```shell
-$ cd HelloWorld
 $ gulp
-
 ...
 
 listening on port 8080
