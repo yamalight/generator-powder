@@ -30,6 +30,8 @@ For powder.js to function properly, you'll need to have following things install
 * [NPM](https://npmjs.org/) v1.4+
 * [MongoDB](https://www.mongodb.org/) v2+
 
+Alternatively you can use [vagrant](http://www.vagrantup.com/) environment that includes all the required packages provided by `powder:vagrant` generator.
+
 ### Installation
 
 ```
@@ -61,6 +63,9 @@ Generates a new angular service named *myNameService* and injects it into main a
 
 `$ yo powder:model myName`  
 Generates a new mongoose model named *myName* and injects it into main app.
+
+`$ yo powder:vagrant`  
+Generates a [vagrant](http://www.vagrantup.com/) environment for the project with all the requirements included.
 
 ## Learning Your Way Around
 
@@ -204,6 +209,18 @@ Note that await function will only work with functions that return promises.
 If you are using libraries or third-party functions that do not return promises, you can use bluebirds `.promisify()` or `.promisifyAll()` functions to turn them into promises and allow usage with asyncawait.
 
 For more info, please refer to [asyncawait](https://github.com/yortus/asyncawait) and [bluebird](https://github.com/petkaantonov/bluebird) docs.
+
+### Vagrant
+
+You can quickly setup a [vagrant](http://www.vagrantup.com/) environment that includes all the required packages for puwder.js app to work.  
+To do so, follow the steps below:  
+1. Run `yo powder:vagrant` to generate all the required vagrant files
+2. Run `vagrant up` to provision the box
+3. Run `vagrant ssh` to open box shell
+4. Use `cd /vagrant` to navigate to shared folder with app code
+5. Run the app using `gulp` command
+
+Please, note that you might need to remove `node_modules` folder and re-run `npm install` inside of a vagrant box to re-compile some of the node modules, otherwise you might get some warnings that are not critical (e.g. `Failed to load c++ bson extension, using pure JS version`).
 
 ### TODO
 
