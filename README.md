@@ -30,7 +30,7 @@ For powder.js to function properly, you'll need to have following things install
 * [NPM](https://npmjs.org/) v1.4+
 * [MongoDB](https://www.mongodb.org/) v2+
 
-Alternatively you can use [vagrant](http://www.vagrantup.com/) environment that includes all the required packages provided by `powder:vagrant` generator.
+Alternatively you can use [vagrant](http://www.vagrantup.com/) environment provided by `powder:vagrant` generator, it includes all the required packages.
 
 ### Installation
 
