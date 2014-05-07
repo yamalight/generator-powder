@@ -22,6 +22,14 @@ Powder.js can (optionally) automatically init git repository and commit all gene
 
 ## Getting Started
 
+### Requirements
+
+For powder.js to function properly, you'll need to have following things installed:
+
+* [Node](http://nodejs.org/) v0.10+
+* [NPM](https://npmjs.org/) v1.4+
+* [MongoDB](https://www.mongodb.org/) v2+
+
 ### Installation
 
 ```
