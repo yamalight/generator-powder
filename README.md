@@ -214,6 +214,7 @@ For more info, please refer to [asyncawait](https://github.com/yortus/asyncawait
 
 You can quickly setup a [vagrant](http://www.vagrantup.com/) environment that includes all the required packages for puwder.js app to work (assuming you have vagrant installed).  
 To do so, follow the steps below:  
+
 1. Run `yo powder:vagrant` to generate all the required vagrant files
 2. Run `vagrant up` to provision the box
 3. Run `vagrant ssh` to open box shell
