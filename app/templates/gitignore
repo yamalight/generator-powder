@@ -13,3 +13,8 @@ views/core/layout.cdn.dust<% } %>
 
 # ignore logs
 logs/*
+
+# ignore vagrant stuff
+.vagrant/
+Vagrantfile
+vagrant/
