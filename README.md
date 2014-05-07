@@ -17,7 +17,8 @@ In addition to build and testing tasks, gulp as well handles all the things rela
 Testing is done using [jshint](http://www.jshint.com/) for linting and [mocha.js](http://visionmedia.github.io/mocha/) with [should.js](https://github.com/visionmedia/should.js/) for automated testing.  
 Default test suite includes two different test files - one for API using simple JSON, and one for browser using [zombie.js](http://zombie.labnotes.org/).  
 In addition, powder.js utilizes [asyncawait](https://github.com/yortus/asyncawait) and promises (using [bluebird](https://github.com/petkaantonov/bluebird)) to simplify asynchronous code.  
-[Bunyan](https://github.com/trentm/node-bunyan) is used as a logger. Logs can be found in `./logs/` folder.
+[Bunyan](https://github.com/trentm/node-bunyan) is used as a logger. Logs can be found in `./logs/` folder.  
+Powder.js can (optionally) automatically init git repository and commit all generated files for simpler project management.
 
 ## Getting Started
 
@@ -198,7 +199,7 @@ For more info, please refer to [asyncawait](https://github.com/yortus/asyncawait
 
 ### TODO
 
-Add more docs and subgenerators.
+Add more docs, subgenerators and a proper test suite.
 
 ## License
 
