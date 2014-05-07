@@ -1,9 +1,10 @@
 var gulp = require('gulp');
-var exit = require('gulp-exit');
+<% if(!addGit) { %>var exit = require('gulp-exit');<% } %>
 
-
-module.exports = function(){
-    return gulp.src('./bower_components/bootstrap/dist/fonts/**')
-        .pipe(gulp.dest('./public/fonts/'))
-        .pipe(exit());
+module.exports = {
+    deps: ['bower'],
+    work: function() {
+        return gulp.src('./bower_components/bootstrap/dist/fonts/**')
+            .pipe(gulp.dest('./public/fonts/'))<% if(!addGit) { %>.pipe(exit())<% } %>;
+    }
 };

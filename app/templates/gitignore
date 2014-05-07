@@ -1,0 +1,15 @@
+# ignore node modules
+node_modules/
+
+# ignore bower modules
+bower_components/
+
+# ignore bootstrap fonts
+public/fonts/
+
+# ignore compiled layouts
+views/core/layout.dust<% if(addCDN) { %>
+views/core/layout.cdn.dust<% } %>
+
+# ignore logs
+logs/*

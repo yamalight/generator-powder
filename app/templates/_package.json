@@ -42,7 +42,8 @@
     "gulp-cdnizer": "^0.2.5",
     "gulp-concat": "^2.2.0",
     "gulp-inject": "^0.4.1",
-    "gulp-exit": "0.0.2",
+    "gulp-exit": "0.0.2",<% if(addGit) { %>
+    "gulp-git": "^0.4.1",<% } %>
     "gulp-if": "^1.1.0",
     "gulp-jshint": "^1.5.5",
     "gulp-livereload": "^1.2.0",
