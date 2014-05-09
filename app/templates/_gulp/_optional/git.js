@@ -6,11 +6,12 @@ module.exports = {
     deps: ['bootstrap'],
     work: function() {
         // init repo
-        git.init();
-        // add all files
-        return gulp.src('.')
-            .pipe(git.add())
-            .pipe(git.commit('initial commit'))
-            .pipe(exit());
+        git.init({}, function() {
+            // add all files
+            return gulp.src('.')
+                .pipe(git.add())
+                .pipe(git.commit('initial commit'))
+                .pipe(exit());
+        });
     }
 };
