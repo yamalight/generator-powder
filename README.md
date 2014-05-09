@@ -213,15 +213,17 @@ For more info, please refer to [asyncawait](https://github.com/yortus/asyncawait
 ### Vagrant
 
 You can quickly setup a [vagrant](http://www.vagrantup.com/) environment that includes all the required packages for puwder.js app to work (assuming you have vagrant installed).  
+It is recommended to generate powder.js app without initialization. Doing so will allow compiling all the depenend node modules inside of the vagrant box from the beginning thus saving you time.  
 To do so, follow the steps below:  
 
 1. Run `yo powder:vagrant` to generate all the required vagrant files
 2. Run `vagrant up` to provision the box
 3. Run `vagrant ssh` to open box shell
 4. Use `cd /vagrant` to navigate to shared folder with app code
-5. Run the app using `gulp` command
+5. (optional) If you haven't initialized the app, run `npm install` to do so.
+6. Run the app using `gulp` command
 
-Please, note that you might need to remove `node_modules` folder and re-run `npm install` inside of a vagrant box to re-compile some of the node modules, otherwise you might get some warnings that are not critical (e.g. `Failed to load c++ bson extension, using pure JS version`).
+Please, note that if you chose to initialize the app from the beginning, you might need to remove `node_modules` folder and re-run `npm install` inside of a vagrant box to re-compile some of the node modules, otherwise you might get some warnings that are not critical (e.g. `Failed to load c++ bson extension, using pure JS version`).
 
 ### TODO
 

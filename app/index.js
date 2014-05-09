@@ -10,7 +10,7 @@ var PowderGenerator = yeoman.generators.Base.extend({
         this.pkg = require('../package.json');
 
         this.on('end', function() {
-            if (!this.options['skip-install']) {
+            if (this.installDeps) {
                 this.installDependencies();
             }
         });
@@ -44,6 +44,11 @@ var PowderGenerator = yeoman.generators.Base.extend({
             name: 'addCDN',
             message: 'Would you like to include CDN generator for client-side js libraries?',
             default: true
+        }, {
+            type: 'confirm',
+            name: 'installDeps',
+            message: 'Initialize app after generation (say "no" if you use vagrant)?',
+            default: true
         }];
 
         this.prompt(prompts, function(props) {
@@ -52,6 +57,7 @@ var PowderGenerator = yeoman.generators.Base.extend({
             this.addAuth = props.addAuth;
             this.addCDN = props.addCDN;
             this.addGit = props.addGit;
+            this.installDeps = props.installDeps;
 
             done();
         }.bind(this));
