@@ -26,7 +26,7 @@
     "express-session": "^1.0.4",
     "helmet": "^0.2.1",
     "lodash": "^2.4.1",
-    "method-override": "^1.0.0",
+    "method-override": "^1.0.2",
     "mongoose": "^3.8.8",
     "optimist": "^0.6.1",
     "passport": "^0.2.0",<% if(addAuth) { %>
@@ -35,7 +35,7 @@
     "request": "^2.34.0"
   },
   "devDependencies": {
-    "browserify": "^3.46.0",
+    "browserify": "^3.46.1",
     "gulp": "^3.6.2",
     "gulp-bower": "0.0.4",
     "gulp-bower-files": "^0.2.2",
@@ -45,14 +45,14 @@
     "gulp-exit": "0.0.2",<% if(addGit) { %>
     "gulp-git": "^0.4.1",<% } %>
     "gulp-jshint": "^1.5.5",
-    "gulp-livereload": "^1.2.0",
+    "gulp-livereload": "^1.5.0",
     "gulp-minify-css": "^0.3.4",
     "gulp-mocha": "^0.4.1",
     "gulp-nodemon": "^1.0.2",
     "gulp-open": "^0.2.8",
     "gulp-rename": "^1.2.0",
     "gulp-watch": "^0.5.4",
-    "should": "^3.3.0",
+    "should": "^3.3.2",
     "zombie": "^2.0.0-alpha9"
   }
 }
