@@ -3,14 +3,13 @@
     "maxerr": 10000, // Maximum error before stopping.
 
     // Predefined globals whom JSHint will ignore.
-    "browser": false, // Standard browser globals e.g. `window`, `document`.
-    "node": true, // node predefined stuff
+    "browser": true, // Standard browser globals e.g. `window`, `document`.
+    "node": false, // node predefined stuff
 
     "predef": [ // Custom globals.
+        "angular",
+        // browserify stuff
         "module",
-        "__dirname",
-        "exports",
-        "process",
         "require"
     ],
 

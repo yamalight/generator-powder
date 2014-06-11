@@ -46,11 +46,11 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
             this.template('_controller.js', 'controllers/main/' + this.camelizedNameLower + '.js');
         }
         // copy client controller
-        this.template('_clientController.js', 'public/js/controllers/' + this.camelizedNameLower + '.js');
+        this.template('_clientController.js', 'client/controllers/' + this.camelizedNameLower + '.js');
         this.template('_template.html', 'public/templates/' + this.camelizedNameLower + '.html');
 
         // modify client-side controllers file
-        var path = 'public/js/controllers.js';
+        var path = 'client/controllers.js';
         var file = this.readFileAsString(path);
         var controllerString = '    app.controller(\'' + this.camelizedName +
             'Controller\', require(\'./controllers/' + this.camelizedNameLower + '.js\'));';
@@ -58,7 +58,7 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
         this.write(path, file);
 
         // modify client-side routes file
-        path = 'public/js/routes.js';
+        path = 'client/routes.js';
         file = this.readFileAsString(path);
         var textToReplace = '\n        $locationProvider.html5Mode(true);';
         var routeString = '        $routeProvider.when(\'' + this.controllerPath + '\', { controller: \'' +

@@ -10,10 +10,10 @@ var FilterGenerator = yeoman.generators.NamedBase.extend({
     },
 
     files: function() {
-        this.template('_filter.js', 'public/js/filters/' + this.camelizedName + '.js');
+        this.template('_filter.js', 'client/filters/' + this.camelizedName + '.js');
 
         // modify client-side directives file
-        var path = 'public/js/filters.js';
+        var path = 'client/filters.js';
         var file = this.readFileAsString(path);
         var directiveString = '    app.filter(\'' + this.camelizedName +
             'Filter\', require(\'./filters/' + this.camelizedName + '.js\'));';

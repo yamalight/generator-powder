@@ -10,6 +10,9 @@ var app = module.exports = express();
 // load view engine config
 require('./app/viewengine')(app, __dirname);
 
+// load static config
+require('./app/static')(app, __dirname);
+
 // load main app config
 require('./app/main')(app);
 

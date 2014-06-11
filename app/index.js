@@ -79,13 +79,13 @@ var PowderGenerator = yeoman.generators.Base.extend({
         this.mkdir('public');
         this.mkdir('public/css');
         this.mkdir('public/img');
-        this.mkdir('public/js');
-        this.mkdir('public/js/controllers');
-        this.mkdir('public/js/data');
-        this.mkdir('public/js/directives');
-        this.mkdir('public/js/filters');
-        this.mkdir('public/js/modules');
-        this.mkdir('public/js/services');
+        this.mkdir('client');
+        this.mkdir('client/controllers');
+        this.mkdir('client/data');
+        this.mkdir('client/directives');
+        this.mkdir('client/filters');
+        this.mkdir('client/modules');
+        this.mkdir('client/services');
         this.mkdir('public/templates');
         this.mkdir('tests');
         this.mkdir('views');
@@ -143,22 +143,23 @@ var PowderGenerator = yeoman.generators.Base.extend({
         this.directory('_public/css', 'public/css');
         this.directory('_public/img', 'public/img');
         // base client-side js
-        this.copy('_public/js/app.js', 'public/js/app.js');
-        this.copy('_public/js/controllers.js', 'public/js/controllers.js');
-        this.copy('_public/js/directives.js', 'public/js/directives.js');
-        this.copy('_public/js/filters.js', 'public/js/filters.js');
-        this.copy('_public/js/routes.js', 'public/js/routes.js');
-        this.copy('_public/js/services.js', 'public/js/services.js');
+        this.copy('_client/jshintrc', 'client/.jshintrc');
+        this.copy('_client/app.js', 'client/app.js');
+        this.copy('_client/controllers.js', 'client/controllers.js');
+        this.copy('_client/directives.js', 'client/directives.js');
+        this.copy('_client/filters.js', 'client/filters.js');
+        this.copy('_client/routes.js', 'client/routes.js');
+        this.copy('_client/services.js', 'client/services.js');
         // client-side data
-        this.directory('_public/js/data', 'public/js/data');
+        this.directory('_client/data', 'client/data');
         // angular directives
-        this.directory('_public/js/directives', 'public/js/directives');
+        this.directory('_client/directives', 'client/directives');
         // angular filters
-        this.directory('_public/js/filters', 'public/js/filters');
+        this.directory('_client/filters', 'client/filters');
         // angular modules
-        this.directory('_public/js/modules', 'public/js/modules');
+        this.directory('_client/modules', 'client/modules');
         // angular services
-        this.directory('_public/js/services', 'public/js/services');
+        this.directory('_client/services', 'client/services');
         // angular templates
         this.directory('_public/templates', 'public/templates');
         // tests
@@ -187,14 +188,11 @@ var PowderGenerator = yeoman.generators.Base.extend({
         if (this.addAuth) {
             this.directory('_controllers/auth', 'controllers/auth');
             this.directory('_controllers/main', 'controllers/main');
-            this.directory('_public/js/controllers',
-                'public/js/controllers');
+            this.directory('_client/controllers', 'client/controllers');
             this.directory('_views', 'views');
         } else {
-            this.copy('_controllers/main/index.js',
-                'controllers/main/index.js');
-            this.copy('_public/js/controllers/home.js',
-                'public/js/controllers/home.js');
+            this.copy('_controllers/main/index.js', 'controllers/main/index.js');
+            this.copy('_client/controllers/home.js', 'client/controllers/home.js');
             this.copy('_views/index.dust', 'views/index.dust');
         }
     }

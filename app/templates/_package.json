@@ -11,6 +11,7 @@
     "asyncawait": "^0.6.1",
     "bluebird": "^1.2.4",
     "body-parser": "^1.0.2",
+    "browserify-middleware": "^3.0.0",
     "bunyan": "^0.22.3",
     "colors": "^0.6.2",
     "connect": "^2.15.0",
@@ -38,13 +39,11 @@
     "gulp": "^3.6.2",
     "gulp-bower": "0.0.4",
     "gulp-bower-files": "^0.2.2",
-    "gulp-browserify": "^0.5.0",
     "gulp-cdnizer": "^0.2.5",
     "gulp-concat": "^2.2.0",
     "gulp-inject": "^0.4.1",
     "gulp-exit": "0.0.2",<% if(addGit) { %>
     "gulp-git": "^0.4.1",<% } %>
-    "gulp-if": "^1.1.0",
     "gulp-jshint": "^1.5.5",
     "gulp-livereload": "^1.2.0",
     "gulp-minify-css": "^0.3.4",
@@ -52,7 +51,6 @@
     "gulp-nodemon": "^1.0.2",
     "gulp-open": "^0.2.8",
     "gulp-rename": "^1.2.0",
-    "gulp-uglify": "^0.2.1",
     "gulp-watch": "^0.5.4",
     "should": "^3.3.0",
     "zombie": "^2.0.0-alpha9"

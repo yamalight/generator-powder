@@ -10,10 +10,10 @@ var ServiceGenerator = yeoman.generators.NamedBase.extend({
     },
 
     files: function() {
-        this.template('_service.js', 'public/js/services/' + this.camelizedName + '.js');
+        this.template('_service.js', 'client/services/' + this.camelizedName + '.js');
 
         // modify client-side directives file
-        var path = 'public/js/services.js';
+        var path = 'client/services.js';
         var file = this.readFileAsString(path);
         var serviceString = '    app.service(\'' + this.camelizedName +
             'Service\', require(\'./services/' + this.camelizedName + '.js\'));';

@@ -1,5 +1,4 @@
 var gulp = require('./gulp')([
-    'browserify',
     'watch',
     'serve',
     'minifycss',
@@ -13,6 +12,6 @@ var gulp = require('./gulp')([
 ]);
 
 gulp.task('init', ['bower', 'bootstrap'<% if(addGit) { %>, 'git'<% } %>]);
-gulp.task('build', ['browserify', 'inject', 'minifycss'<% if(addCDN) { %>, 'cdn'<% } %>]);
+gulp.task('build', ['inject', 'minifycss'<% if(addCDN) { %>, 'cdn'<% } %>]);
 gulp.task('test', ['jshint', 'mocha']);
 gulp.task('default', ['build', 'watch', 'serve']);

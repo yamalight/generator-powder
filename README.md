@@ -112,18 +112,18 @@ listening on port 8080
 - **/modules/** - Server-side user modules
 - **/public/css/** - CSS files
 - **/public/img/** - Client-side image files
-- **/public/js/app.js** - Client-side javascript bootstrapper
-- **/public/js/controllers.js** - Angular controllers loader
-- **/public/js/directives.js** - Angular directives loader
-- **/public/js/filters.js** - Angular filters loader
-- **/public/js/routes.js** - Angular routes
-- **/public/js/services.js** - Angular services loader
-- **/public/js/controllers/** - Angular controllers
-- **/public/js/data/** - Supplementary data
-- **/public/js/directives/** - Custom angular directives
-- **/public/js/filters/** - Custom angular filters
-- **/public/js/modules/** - Client-side user modules
-- **/public/js/services/** - Custom angular services
+- **/client/app.js** - Client-side javascript bootstrapper
+- **/client/controllers.js** - Angular controllers loader
+- **/client/directives.js** - Angular directives loader
+- **/client/filters.js** - Angular filters loader
+- **/client/routes.js** - Angular routes
+- **/client/services.js** - Angular services loader
+- **/client/controllers/** - Angular controllers
+- **/client/data/** - Supplementary data
+- **/client/directives/** - Custom angular directives
+- **/client/filters/** - Custom angular filters
+- **/client/modules/** - Client-side user modules
+- **/client/services/** - Custom angular services
 - **/public/templates/** - Browser-side angular templates
 - **/tests/** - Unit and functional test cases
 - **/views/** - Server-side dust.js templates

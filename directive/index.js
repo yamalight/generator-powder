@@ -10,10 +10,10 @@ var DirectiveGenerator = yeoman.generators.NamedBase.extend({
     },
 
     files: function() {
-        this.template('_directive.js', 'public/js/directives/' + this.camelizedName + '.js');
+        this.template('_directive.js', 'client/directives/' + this.camelizedName + '.js');
 
         // modify client-side directives file
-        var path = 'public/js/directives.js';
+        var path = 'client/directives.js';
         var file = this.readFileAsString(path);
         var directiveString = '    app.directive(\'' + this.camelizedName +
             'Directive\', require(\'./directives/' + this.camelizedName + '.js\'));';

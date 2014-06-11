@@ -11,9 +11,4 @@ module.exports = function(app, dirname) {
 
     // set views for error and 404 pages
     app.set('views', dirname + '/views');
-
-    // serve static files
-    app.use(express.static(dirname + '/public'));
-    // serve bower components as static
-    app.use('/bower_components', express.static(dirname + '/bower_components'));
 };
