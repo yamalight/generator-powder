@@ -1,6 +1,9 @@
 module.exports = function(app) {
     // <%= camelizedName %>
     app.get('<%= controllerPath %>', function(req, res) {
-        return res.render('<%= camelizedNameLower %>');
+        var testData = {test: 'I am a test data from server!'};
+        return res.render('<%= camelizedNameLower %>', {
+            initData: testData // pass test data to angular
+        });
     });
 };

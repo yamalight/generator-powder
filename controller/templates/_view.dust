@@ -8,6 +8,6 @@
 {<body}
     <div class="container">
         <h1>This is <%= camelizedName %>!</h1>
-        <div ng-view></div>
+        <div ng-view {?initData}ng-init="initData={initData|js}"{/initData}></div>
     </div>
 {/body}
