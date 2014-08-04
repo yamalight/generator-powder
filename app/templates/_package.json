@@ -14,7 +14,7 @@
     "browserify-middleware": "^3.0.0",
     "bunyan": "^0.22.3",
     "colors": "^0.6.2",
-    "connect": "^2.15.0",
+    "connect": "^2.24.2",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^0.4.1",
     "consolidate": "^0.10.0",
@@ -27,7 +27,7 @@
     "helmet": "^0.2.1",
     "lodash": "^2.4.1",
     "method-override": "^1.0.2",
-    "mongoose": "^3.8.8",
+    "mongoose": "^3.8.14",
     "optimist": "^0.6.1",
     "passport": "^0.2.0",<% if(addAuth) { %>
     "passport-local": "^1.0.0",<% } %>
@@ -38,7 +38,6 @@
     "browserify": "^3.46.1",
     "gulp": "^3.6.2",
     "gulp-bower": "0.0.4",
-    "gulp-bower-files": "^0.2.2",
     "gulp-cdnizer": "^0.2.5",
     "gulp-concat": "^2.2.0",
     "gulp-inject": "^0.4.1",
@@ -52,6 +51,7 @@
     "gulp-open": "^0.2.8",
     "gulp-rename": "^1.2.0",
     "gulp-watch": "^0.5.4",
+    "main-bower-files": "^1.0.2",
     "should": "^3.3.2",
     "zombie": "^2.0.0-alpha9"
   }
