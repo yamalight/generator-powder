@@ -2,7 +2,6 @@
 
 // imports
 var app = require('../app');
-var colors = require('colors');
 var argv = require('optimist').argv;
 var portfinder = require('portfinder');
 var logger = require('../logger');

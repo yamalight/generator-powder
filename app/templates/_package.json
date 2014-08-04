@@ -13,7 +13,6 @@
     "body-parser": "^1.0.2",
     "browserify-middleware": "^3.0.0",
     "bunyan": "^0.22.3",
-    "colors": "^0.6.2",
     "connect": "^2.24.2",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^0.4.1",
