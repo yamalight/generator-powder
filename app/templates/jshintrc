@@ -53,9 +53,7 @@
     "nonew": true, // Prohibit use of constructors for side-effects.
     "plusplus": false, // Prohibit use of `++` & `--`.
     "sub": false, // Tolerate all forms of subscript notation besides dot notation e.g. `dict["key"]` instead of `dict.key`.
-    "trailing": true, // Prohibit trailing whitespaces.
     "indent": 4, // Specify indentation spacing
-    "multistr": true, // allow multiline stirngs,
     "camelcase": true, // allow only camelCase vars
     "quotmark": true, // enforce quote consistency
     "maxparams": 5, // allow 5 max function params

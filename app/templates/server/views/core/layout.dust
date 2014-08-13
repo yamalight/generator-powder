@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <!-- meta stuff -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- mobile fullscreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- title -->
+    <title>{+title}<%= appName %>{/title}</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/dist/main.min.css" />
+</head>
+<body>
+    <!-- page body -->
+    {+body/}
+
+    <!-- js vendor libraries -->
+    <script src="/dist/vendor.min.js"></script>
+
+    <!-- main app script -->
+    <script src="/dist/app.min.js"></script>
+
+    <!-- include GA -->
+    {>"helpers/ga.dust"/}
+</body>
+</html>

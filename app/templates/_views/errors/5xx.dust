@@ -1,7 +1,0 @@
-<% if(addCDN) { %>{#debug}{>"core/layout.dust"/}{:else}{>"core/layout.cdn.dust"/}{/debug}<% } else {%>{>"core/layout.dust"/}<% } %>
-{<title}
-  Error!
-{/title}
-{<body}
-  Oops! Something blew up!
-{/body}

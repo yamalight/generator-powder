@@ -2,7 +2,7 @@
 **/.git/**
 
 # Ignore public web files
-public/**/*
+client/**/*
 
 # Ignore tests
 tests/**
@@ -12,7 +12,6 @@ gulp/**/*
 
 # Ignore bower and npm
 node_modules/**/*
-bower_components/**/*
 
 # Ignore logs
 logs/**

@@ -1,4 +1,0 @@
-<% if(addAuth) { %>{#user}
-    <li><a href="/auth/logout" target="_self">Sign out</a></li>
-{/user}<% } else { %>
-<li><a href="#" target="_self">Right menu</a></li><% } %>

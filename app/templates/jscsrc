@@ -1,0 +1,29 @@
+{
+    "preset": "google",
+    "fileExtensions": [".js", ".jsx"],
+
+    "excludeFiles": [],
+
+    "maximumLineLength": 120,
+
+    "validateLineBreaks": "LF",
+    "validateIndentation": 4,
+    "validateQuoteMarks": "'",
+
+    "requireParenthesesAroundIIFE": true,
+    "requireBlocksOnNewline": true,
+    "requireCapitalizedConstructors": true,
+    "requireDotNotation": true,
+    "requireSpaceAfterLineComment": true,
+    "requireCommaBeforeLineBreak": true,
+
+    "disallowEmptyBlocks": true,
+    "disallowMultipleVarDecl": true,
+    "disallowKeywords": ["with"],
+    "disallowQuotedKeysInObjects": true,
+    "disallowSpaceAfterObjectKeys": true,
+    "disallowKeywordsOnNewLine": ["else", "catch"],
+    "disallowYodaConditions": true,
+    "disallowNewlineBeforeBlockStatements": true,
+    "disallowImplicitTypeConversion": ["numeric", "boolean", "binary", "string"]
+}
