@@ -1,7 +1,5 @@
 'use strict';
-var util = require('util');
 var yeoman = require('yeoman-generator');
-
 
 var ModelGenerator = yeoman.generators.NamedBase.extend({
     init: function() {
@@ -27,13 +25,13 @@ var ModelGenerator = yeoman.generators.NamedBase.extend({
     },
 
     files: function() {
-        this.template('_model.js', 'models/' + this.camelizedName.toLowerCase() + '.js');
+        this.template('_model.js', 'server/models/' + this.camelizedName.toLowerCase() + '.js');
 
         // modify client-side directives file
-        var path = 'models/index.js';
+        var path = 'server/models/index.js';
         var file = this.readFileAsString(path);
-        var newModelString = '\nexports.' + this.camelizedName +
-            ' = require(\'./' + this.camelizedName.toLowerCase() + '.js\');';
+        var newModelString = 'exports.' + this.camelizedName +
+            ' = require(\'./' + this.camelizedName.toLowerCase() + '.js\');\n';
         file += newModelString;
         this.write(path, file);
     }
