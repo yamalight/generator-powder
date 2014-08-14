@@ -12,10 +12,6 @@ sudo dpkg-reconfigure locales
 echo "[-->] Installing supplementary tools..."
 sudo apt-get install -y software-properties-common
 
-echo "[-->] Adding mongodb to apt..."
-apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
-echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/10gen.list
-
 echo "[-->] Adding node.js to apt..."
 sudo add-apt-repository -y ppa:chris-lea/node.js
 
