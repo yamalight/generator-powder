@@ -28,6 +28,11 @@ var PowderGenerator = yeoman.generators.Base.extend({
             message: 'What do you want to call your app?'
         }, {
             type: 'confirm',
+            name: 'addServer',
+            message: 'Would you like to add express.js server?',
+            default: true
+        }, {
+            type: 'confirm',
             name: 'addGit',
             message: 'Would you like to use Git?',
             default: true
@@ -42,6 +47,7 @@ var PowderGenerator = yeoman.generators.Base.extend({
             this.appName = props.appName;
             this.camelizedAppName = this._.camelize(this.appName);
             this.addGit = props.addGit;
+            this.addServer = props.addServer;
             this.installDeps = props.installDeps;
 
             done();
@@ -51,8 +57,11 @@ var PowderGenerator = yeoman.generators.Base.extend({
     scaffoldFolders: function() {
         this.mkdir('client');
         this.mkdir('logs');
-        this.mkdir('server');
         this.mkdir('tools');
+
+        if (this.addServer) {
+            this.mkdir('server');
+        }
     },
 
     copyMainFiles: function() {
@@ -75,8 +84,13 @@ var PowderGenerator = yeoman.generators.Base.extend({
 
     projectfiles: function() {
         this.directory('client', 'client');
-        this.directory('server', 'server');
         this.directory('tools', 'tools');
+
+        // add server if needed
+        if (this.addServer) {
+            this.copy('_optional/gulp/serve.js', 'tools/gulp/tasks/serve.js');
+            this.directory('server', 'server');
+        }
 
         // process git stuff
         if (this.addGit) {
