@@ -31,9 +31,6 @@ sudo apt-get install -y git
 echo "[-->] Installing latest node..."
 sudo apt-get install -y  nodejs
 
-echo "[-->] Installing latest mongodb..."
-sudo apt-get install -y mongodb-10gen
-
 echo "[-->] Installing global npm modules..."
 sudo npm -g install gulp bunyan
 
