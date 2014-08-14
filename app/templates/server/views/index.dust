@@ -1,5 +1,4 @@
 {>"core/layout.dust"/}
 {<body}
-    <navigation></navigation>
     <div ng-view></div>
 {/body}
