@@ -30,7 +30,10 @@ For powder.js to function properly, you'll need to have following things install
 * [NPM](https://npmjs.org/) v1.4+
 * [gulp](http://gulpjs.com/)
 
-Alternatively you can use [vagrant](http://www.vagrantup.com/) environment provided by `powder:vagrant` generator, it includes all the required packages.
+Alternatively you can use [vagrant](http://www.vagrantup.com/) environment provided by `powder:vagrant` generator, it includes all the required packages.  
+Or [docker](https://www.docker.com/) environment provided by `powder:docker` generator.  
+Please note, both docker and vagrant assume you have server-side in generated project. 
+If not, you will have to modify the environments yourself.
 
 ### Installation
 
@@ -61,6 +64,9 @@ Generates a new mongoose model named *myName* and injects it into main app.
 
 `$ yo powder:vagrant`  
 Generates a [vagrant](http://www.vagrantup.com/) environment for the project with all the requirements included.
+
+`$ yo powder:docker`  
+Generates a [docker](https://www.docker.com/) environment for the project with all the requirements included.
 
 ## Learning Your Way Around
 
@@ -220,6 +226,19 @@ To do so, follow the steps below:
 6. Run the app using `gulp` command
 
 Please, note that if you chose to initialize the app from the beginning, you might need to remove `node_modules` folder and re-run `npm install` inside of a vagrant box to re-compile some of the node modules, otherwise you might get some warnings that are not critical (e.g. `Failed to load c++ bson extension, using pure JS version`).
+
+### Docker
+
+You can as well quickly setup a [docker](https://www.docker.com/) container that includes all the required packages for puwder.js app to work (assuming you have docker installed).  
+It is recommended to generate powder.js app without initialization. Doing so will allow compiling all the depenend node modules inside of the docker container from the beginning thus saving you time.  
+To do so, follow the steps below:  
+
+1. Run `yo powder:docker` to generate all the required docker files
+2. Run `docker build -t appname .` to generate new docker container
+3. Run `docker run -i -t -p 8080:8080 appname` to launch generated container
+
+Please, note that adding Dockerfile (running `powder:docker`) changes your package.json file and removes post-install directive from it. 
+It is done to allow docker to cache `npm install` and `bower install` steps so that if you change only your app files, you don't need to wait for these steps again.
 
 ### TODO
 
