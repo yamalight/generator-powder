@@ -1,6 +1,6 @@
 {
   "name": "generator-powder",
-  "version": "0.7.6",
+  "version": "0.8.0",
   "description": "Powder.js generator for yeoman",
   "license": "MIT",
   "main": "app/index.js",
@@ -27,7 +27,8 @@
     "dust",
     "bootstrap",
     "gulp",
-    "git"
+    "git",
+    "single page application"
   ],
   "dependencies": {
     "chalk": "~0.4.0",
