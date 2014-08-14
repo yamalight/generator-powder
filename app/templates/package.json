@@ -37,8 +37,7 @@
     "request": "^2.40.0",
     "should": "^4.0.4",<% if(!addServer) { %>
     "uglifyify": "^2.5.0",
-    "vinyl-source-stream": "^0.1.1",
-    <% } %>
+    "vinyl-source-stream": "^0.1.1",<% } %>
     "zombie": "^2.0.0-alpha31"
   }
 }

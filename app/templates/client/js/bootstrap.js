@@ -22,10 +22,10 @@ module.exports = function configureApp(app) {
             };
 
             // default route
-            $routeProvider.otherwise({redirectTo: '/'});
+            $routeProvider.otherwise({redirectTo: '/'});<% if(addServer) { %>
 
             // enable html5 mode
-            $locationProvider.html5Mode(true);
+            $locationProvider.html5Mode(true);<% } %>
         },
     ]);
 
