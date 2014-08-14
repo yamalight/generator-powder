@@ -90,6 +90,9 @@ var PowderGenerator = yeoman.generators.Base.extend({
         if (this.addServer) {
             this.copy('_optional/gulp/serve.js', 'tools/gulp/tasks/serve.js');
             this.directory('server', 'server');
+        } else {
+            // if not - copy index.html for testing
+            this.template('_optional/index.html', 'client/index.html');
         }
 
         // process git stuff
