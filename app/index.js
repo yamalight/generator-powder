@@ -93,6 +93,7 @@ var PowderGenerator = yeoman.generators.Base.extend({
         } else {
             // if not - copy index.html for testing
             this.template('_optional/index.html', 'client/index.html');
+            this.copy('_optional/gulp/browserify.js', 'tools/gulp/tasks/browserify.js');
         }
 
         // process git stuff
