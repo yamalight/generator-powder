@@ -21,6 +21,9 @@ module.exports = function configureApp(app) {
                 service: $provide.service,
             };
 
+            // default route
+            $routeProvider.otherwise({redirectTo: '/'});
+
             // enable html5 mode
             $locationProvider.html5Mode(true);
         },
