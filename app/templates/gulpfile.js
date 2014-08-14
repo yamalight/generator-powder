@@ -1,6 +1,6 @@
 var gulp = require('./tools/gulp')([
-    'watch',
-    'serve',
+    'watch',<% if(addServer) { %>
+    'serve',<% } %>
     'minifycss',
     'bower',
     'bootstrap',
@@ -15,4 +15,4 @@ gulp.task('init', ['bower', 'bootstrap'<% if(addGit) { %>, 'git'<% } %>]);
 gulp.task('build', ['vendor', 'minifycss']);
 gulp.task('lint', ['jshint', 'jscs']);
 gulp.task('test', ['lint', 'mocha']);
-gulp.task('default', ['build', 'watch', 'serve']);
+gulp.task('default', ['build', 'watch'<% if(addServer) { %>, 'serve'<% } %>]);
