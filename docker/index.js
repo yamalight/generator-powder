@@ -8,6 +8,7 @@ var DockerGenerator = yeoman.generators.Base.extend({
 
     files: function() {
         this.copy('_Dockerfile', 'Dockerfile');
+        this.copy('dockerignore', '.dockerignore');
 
         // modify package.json and remove postinstall step
         var path = 'package.json';

@@ -1,0 +1,13 @@
+# ignore node modules
+node_modules/
+
+# ignore bower modules
+client/bower_components/
+
+# ignore logs
+logs/
+
+# ignore vagrant stuff
+.vagrant/
+Vagrantfile
+vagrant/
