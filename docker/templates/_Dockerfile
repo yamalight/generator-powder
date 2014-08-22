@@ -26,9 +26,10 @@ RUN mkdir -p /opt/app/client && cp -R /tmp/bower/bower_components /opt/app/clien
 # Define working directory and bundle source
 WORKDIR /opt/app
 ADD . /opt/app
+RUN gulp build
 
 # Expose port 8080
 EXPOSE 8080
 
 # Define default command.
-CMD ["gulp"]
+CMD ["node", "server"]
