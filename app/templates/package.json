@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "body-parser": "^1.0.2",
-    "browserify-middleware": "^3.0.0",
+    "browserify-middleware": "^4.1.0",
     "bunyan": "^1.0.0",
     "compression": "^1.1.0",
     "consolidate": "^0.10.0",
@@ -32,9 +32,9 @@
     "gulp-jscs": "^1.1.0",
     "gulp-jshint": "^1.5.5",
     "gulp-minify-css": "^0.3.4",
-    "gulp-mocha": "^0.5.2",
+    "gulp-mocha": "^1.1.1",
     "gulp-nodemon": "^1.0.2",
-    "gulp-watch": "^0.6.9",
+    "gulp-watch": "^1.1.0",
     "request": "^2.40.0",
     "should": "^4.0.4",<% if(!addServer) { %>
     "uglifyify": "^2.5.0",
