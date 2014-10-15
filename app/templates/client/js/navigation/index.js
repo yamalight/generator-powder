@@ -3,7 +3,7 @@ module.exports = function(app) {
     app.register.directive('navigation', function navigationDirective() {
         return {
             restrict: 'E',
-            templateUrl: 'navigation/template.html',
+            templateUrl: '/navigation/template.html',
             controller: require('./controller'),
         };
     });

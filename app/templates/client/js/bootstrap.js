@@ -30,7 +30,7 @@ module.exports = function configureApp(app) {
     ]);
 
     // on app run
-    app.run(function () {
+    app.run(function() {
         // inject all the modules
         modules.forEach(function(module) {
             module(app);

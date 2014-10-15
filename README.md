@@ -32,7 +32,7 @@ For powder.js to function properly, you'll need to have following things install
 
 Alternatively you can use [vagrant](http://www.vagrantup.com/) environment provided by `powder:vagrant` generator, it includes all the required packages.  
 Or [docker](https://www.docker.com/) environment provided by `powder:docker` generator.  
-Please note, both docker and vagrant assume you have server-side in generated project. 
+Please note, both docker and vagrant assume you have server-side in generated project.
 If not, you will have to modify the environments yourself.
 
 ### Installation
@@ -56,7 +56,7 @@ Creates a new powder.js application.
 Generates a new server-side mongodb database named *myName* and installs all the needed dependencies in main app.
 
 `$ yo powder:module myName`  
-Generates a new angular client-side module named *myName* and injects it into main app. 
+Generates a new angular client-side module named *myName* and injects it into main app.
 Module can consists of controller, directive, service and filter. Or just any one of those.
 
 `$ yo powder:model myName`  
@@ -103,7 +103,7 @@ listening on port 8080
 
 ### Project Structure
 
-Client: 
+Client:
 - **/client/css/** - CSS files
 - **/client/js/app.js** - Client-side javascript app entry point bootstrapper
 - **/client/js/bootstrap.js** - Client-side javascript app bootstrapper
@@ -120,7 +120,7 @@ Client module (can be generated with `powder:module`):
 - **/client/MODULE/filter.js** - Client-side app angular filter
 - **/client/MODULE/service.js** - Client-side app angular service
 
-Server (optional): 
+Server (optional):
 - **/server/index.js** - Server application entry point
 - **/server/app/** - Server application and middleware configuration
 - **/server/controllers/** - Server application routes
@@ -169,7 +169,7 @@ Client-side templates are loaded from the `/client/js/MODULE/templates/` directo
 ### POST requests
 
 Since Powder.js utilizes CSRF tokens for increased security, to send POST request that will be accepted you need to inclide this token.  
-To do that you have to pass token from server into your template (or javascript request). The token can be retrieved from `csrf` variable.  
+To do that you have to pass token from server into your template (or javascript request). The token can be retrieved from `csrf` variable and is by default exposed as `window.csrf`.  
 Request must contain the token in `_csrf` field.  
 For example, you can include it in template like this: `<input type="hidden" name="_csrf" value="{csrf}" />`
 
@@ -237,7 +237,7 @@ To do so, follow the steps below:
 2. Run `docker build -t appname .` to generate new docker container
 3. Run `docker run -i -t -p 8080:8080 appname` to launch generated container
 
-Please, note that adding Dockerfile (running `powder:docker`) changes your package.json file and removes post-install directive from it. 
+Please, note that adding Dockerfile (running `powder:docker`) changes your package.json file and removes post-install directive from it.
 It is done to allow docker to cache `npm install` and `bower install` steps so that if you change only your app files, you don't need to wait for these steps again.
 
 ### TODO

@@ -10,5 +10,7 @@ exports.cookieSecret = 'andMeToo';
 exports.passwordSalt = 'ThisIsPasswordSalt';
 
 // default app port
+exports.defaultHost = 'localhost';
 exports.defaultPort = 8080;
+exports.baseUrl = 'http://' + exports.defaultHost + ':' + exports.defaultPort + '/';
 <% } %>

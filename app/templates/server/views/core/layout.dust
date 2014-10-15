@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
+    <base href="{baseUrl}">
     <!-- meta stuff -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -22,6 +23,11 @@
 
     <!-- main app script -->
     <script src="/dist/app.min.js"></script>
+
+    <!-- shared vars -->
+    <script type="text/javascript">
+        window.csrf = '{csrf}';
+    </script>
 
     <!-- include GA -->
     {>"helpers/ga.dust"/}

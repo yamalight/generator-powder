@@ -10,7 +10,7 @@ module.exports = function(app) {
 <% } %><% if(addController) { %>
     // register controller with route
     app.register.route('<%= controllerPath %>', {
-        templateUrl: '<%= camelizedNameLower %>/template.html',
+        templateUrl: '/<%= camelizedNameLower %>/template.html',
         controller: require('./controller'),
     });<% } %>
 };
