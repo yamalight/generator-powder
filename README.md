@@ -168,7 +168,7 @@ Client-side templates are loaded from the `/client/js/MODULE/templates/` directo
 
 ### POST requests
 
-Since Powder.js utilizes CSRF tokens for increased security, to send POST request that will be accepted you need to inclide this token.  
+Since Powder.js utilizes CSRF tokens for increased security, to send POST request that will be accepted you need to include this token.  
 To do that you have to pass token from server into your template (or javascript request). The token can be retrieved from `csrf` variable and is by default exposed as `window.csrf`.  
 Request must contain the token in `_csrf` field.  
 For example, you can include it in template like this: `<input type="hidden" name="_csrf" value="{csrf}" />`
@@ -214,7 +214,7 @@ For more info, please refer to [asyncawait](https://github.com/yortus/asyncawait
 
 ### Vagrant
 
-You can quickly setup a [vagrant](http://www.vagrantup.com/) environment that includes all the required packages for puwder.js app to work (assuming you have vagrant installed).  
+You can quickly setup a [vagrant](http://www.vagrantup.com/) environment that includes all the required packages for powder.js app to work (assuming you have vagrant installed).  
 It is recommended to generate powder.js app without initialization. Doing so will allow compiling all the depenend node modules inside of the vagrant box from the beginning thus saving you time.  
 To do so, follow the steps below:  
 
