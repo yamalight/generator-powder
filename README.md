@@ -1,6 +1,8 @@
 # generator-powder
 
-Generator for scaffolding out Powder.js single page web applications
+![Project no longer maintained](https://img.shields.io/badge/project-unmaintained-red.svg)
+
+> Generator for scaffolding out Powder.js single page web applications
 
 ## About Powder.js
 
